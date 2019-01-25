@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Lexington, KY Foodscape Mapping Project</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <!--links to additional style and font resources -->
+    <link href="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+    <link href='css/styles.css' rel='stylesheet' />
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+
+<body class="prose prose--dark bg-gray">
+    <!--body of the website that will be on the left side of the screen and contain text and image -->
+
+    <div class='grid'>
+        <div class='col col--12 col--3-ml p12 pb6 viewport-third viewport-full-ml'>
+            <div class='h-full scroll-auto'>
+                <h3 class='txt-m mb6 align-center mt6 mr24'>
+                    <br/>
+                    <br/></h3>
+                <img src='images/welcome.jpg' alt="Welcome Sign" class='mb24 pic ' height="268" width="348">
+                <p class="txt-s mb6 mr24"></p>
+                <div class='txt-m mt6 mb12 mr24'></div>
+                <p class="txt-s mb6 mr24"></p>
+                <footer class='prose prose--dark bg-gray txt-s'>
+                    <ul>
+                        <li>Explore the raw <a href=''>data</a></li>
+                        <li>Map authored by <a href='https://ljmoser83.github.io/'>Lee Moser</a></li>
+                    </ul>
+
+                </footer>
+            </div>
+
+        </div>
+        <div class='col col--12 col--9-ml h180 h-full-ml'>
+            <div id="map" class='viewport-twothirds viewport-full-ml'></div>
+
+            <!-- year display -->
+            <div id='year' class='range w56 bg-white round-ml p12 txt-m txt-bold'></div>
+
+            <!-- ui slider -->
+            <div id='slider' class='range--blue w160 bg-white round-ml p12'>
+                <input type='range' min="2008" , max="2016" , value="2016" , step="1" class="slider" />
+            </div>
+
+
+            <div class='select-container ban' id='ban'>
+                <select class='select ml12 ban' name='ban' id='ban'>
+                    <option selected disabled></option>
+                    <option value=''></option>
+                    <option value=''></option>
+                    <option value=''></option>
+                    <option value=''></option>
+                    <option value=''></option>
+                    <option value=''></option>
+                    <option value=''></option>
+                </select>
+                <div class='select-arrow'></div>
+            </div>
+
+            <!-- legend -->
+            <div id='legend' class='legend bg-white round-ml p18'>
+                <h3 class='mb12 w-full mx-auto txt-m txt-bold '>Title of Legend</h3>
+                <div class='legend-circles relative w180 wmax180'>
+                    <div class="legend-large border border--gray-light absolute"></div>
+                    <div class="legend-small border border--gray-light absolute"></div>
+                    <div class="legend-large-label txt-m absolute"></div>
+                    <div class="legend-small-label txt-m absolute"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--additional script resource links -->
+    <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+    <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+    <script src="https://unpkg.com/simple-statistics@2.2.0/dist/simple-statistics.min.js"></script>
+    <script src='js/app.js'></script>
+
+</body>
+
+</html>
