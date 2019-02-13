@@ -19,6 +19,10 @@
 
 * I have requested block level demographic data from LFUCG PVA. I would like to look at the effect of the resolution of block vs tract level data on how the demographics and other characteristics of the population are impacted (This is a classic example of the MAUP).
 
+* I am considering utilizing visualizations with kde plots that aggregate based on the definition of various foodscape phenomena (food swamp, desert, areas of healthy foods).
+
+* For Web design, I am looking into using the mapbox framework for user interface design. I am also going to look into adding a mapbox (or smililar) geocoder to the website so that people can investigate specific locations, by address, in Lexington.
+
 ## Literature Review
 * Christian, J.W. Using geospatial technologies to explore activity-based retail food environments. Spatial and Spatio-temporal Epidemiology 3(2012) 287-295. Accessed 1/25/2019.
 * Shannon, J., Christian, J.W. What is the relationship between food shopping and daily mobility? A relational approach to analysis of food access. Geojurnal (2017) 82:769-785. Accessed 1/25/2019.
