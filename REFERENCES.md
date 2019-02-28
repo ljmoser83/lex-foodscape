@@ -28,6 +28,7 @@
 * Shannon, J., Christian, J.W. What is the relationship between food shopping and daily mobility? A relational approach to analysis of food access. Geojournal (2017) 82:769-785. Accessed 1/25/2019.
 * Rose, D., Bodor, N., Swalm, C., Rice, J., Fraley, T., Hutchinson, P. Deserts in New Orleans? Illustrations of Urban Food Access and Implications for Policy. University of Michigan National Poverty Center. USDA Economic Research Service Research: Ann Arbor, MI, USA. 2009. https://pdfs.semanticscholar.org/abc8/b418aa0783c8f3b0a0c4fca8f137ad806e0a.pdf
 * Cooksey-Stowers, K., Schwarts, M.B., Brownell, K.D. Food Swamps Predict Obesity Rates Better than Food Deserts in the United States. International Journal of Environmental Reesearch and Public Health. 2017. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5708005/pdf/ijerph-14-01366.pdf 
+* Mackendrick, Norah. (2014). Jargon: Foodscape. Contexts. 13. 16-18. 10.1177/1536504214545754. https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754 
 
 ## Notes
 * python ETL documentation and data sources available for Fayette census tracts and USDA ERS: https://github.com/newmapsplus/map674-module-03-ljmoser83/blob/master/exercise_03.ipynb
