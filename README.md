@@ -7,12 +7,18 @@ The goal of the *Lexington, KY Foodscape Mapping Project* is to design an intera
 ## II. Methodology
 
 ### A. Data
+-Fayette County Food Locations: https://lexingtonhealthdepartment.org/food-protection/ 
+-Processed version of the dataset is available at: https://github.com/ljmoser83/lex-foodscape/blob/master/data/food_locs_fayette.xlsx
+-Geocoded shapefile of this data can be found at: https://github.com/ljmoser83/lex-foodscape/tree/master/data/Lex_Food 
 
 ### B. Medium for delivery
 
 ### C. Application layout
 
 ### D. Thematic representation
+-I am considering utilizing visualizations with kde plots that aggregate based on the definition of various foodscape phenomena (food swamp, desert, areas of healthy foods).
+
+-For Web design, I am looking into using the mapbox framework for user interface design. I am also going to look into adding a mapbox (or smililar) geocoder to the website so that people can investigate specific locations, by address, in Lexington.
 
 ### E. User interaction
 
