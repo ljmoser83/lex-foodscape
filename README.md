@@ -49,7 +49,7 @@ The user interactions will focus on identifying the user's exposure to potential
 
 ### F. Aesthetics and design considerations
 
--The website will be developed using mobile-first design. I envision the user accessing the website from their mobile device as the move around Lexington, KY. I will likely have a version like the image displayed in the application layout for desktop design, as well. The mobile version will likely be designed with the narrative in the header of the website, the map in the body of the website, and the interactive list of food locations in the footer of the website, in a vertical scroller layout. I generally prefer dark themed base maps with strongly contrasted text. I believe this will be my target for the aesthetics of the website design.
+-The website will be developed using mobile-first design. I envision the user accessing the website from their mobile device as they move around Lexington, KY. I will likely have a version like the image displayed in the application layout for desktop design, as well. The mobile version will likely be designed with the narrative in the header of the website, the map in the body of the website, and the interactive list of food locations in the footer of the website, in a vertical scroller layout. I generally prefer dark themed base maps with strongly contrasted text. I believe this will be my target for the aesthetics of the website design.
 
 ### G. Conclusion
 
