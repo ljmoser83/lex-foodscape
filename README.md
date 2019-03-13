@@ -14,7 +14,7 @@ The goal of the *Lexington, KY Foodscape Mapping Project* is to design an intera
 ### B. Medium for delivery
 
 ### C. Application layout
-
+![Website Design Sketch](http://localhost:8888/lab/tree/images/lex-foodscape-concept.pdf)
 ### D. Thematic representation
 -I am considering utilizing visualizations with kde plots that aggregate based on the definition of various foodscape phenomena (food swamp, desert, areas of healthy foods).
 
