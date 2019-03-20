@@ -19,9 +19,11 @@ The goal of the *Lexington, KY Foodscape Mapping Project* is to design an intera
 A responsive website will be built around an interactive web map containing the food location data for Lexington, KY. The web map will be programmed using open source geospatial and responsive design libraries. The website content and design will be programmed using html5, CSS, and Javascript. The website will include a narrative section that will define critical concepts and terminology to ensure that the user is educated on the jargon associated with foodscapes, food access, and food equity.
 
 ### C. Application layout
+Desktop:
+![Desktop Design Sketch](https://github.com/ljmoser83/lex-foodscape/blob/master/images/lex-foodscape-concept.png)
 
-![Website Design Sketch](https://github.com/ljmoser83/lex-foodscape/blob/master/images/lex-foodscape-concept.png)
-
+Mobile:
+![Mobile Deign Sketch](https://github.com/ljmoser83/lex-foodscape/blob/master/images/mobile.png)
 ### D. Thematic representation
 
 -The "RFEI_cat" field will be used for visualization and symbology during website user interaction. It will also be utilized for a statistical analysis to represent the exposure to healthy/unhealthy food choices in the selected foodscape area.
