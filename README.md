@@ -2,7 +2,7 @@
 # Lexington, KY Foodscape Mapping Project
 
 ## I. Introduction
-The goal of the *Lexington, KY Foodscape Mapping Project* is to design an interactive web map that explores the [foodscape](https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754) concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize how demographic characteristics, health indicators of residents, measures of economic prosperity, and accessibility serve as explanatory and response variables for shaping a foodscape. Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of food system equity. 
+The goal of the *Lexington, KY Foodscape Mapping Project* is to design an interactive web map that explores the [foodscape](https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754) concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions. Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment. An underlying theme of this projecct is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups). 
 
 ## II. Methodology
      
