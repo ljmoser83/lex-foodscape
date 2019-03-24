@@ -23,33 +23,17 @@ Desktop:
 
 ### D. Thematic representation
 
--The "RFEI_cat" field will be used for visualization and symbology during website user interaction. It will also be utilized for a statistical analysis to represent the exposure to healthy/unhealthy food choices in the selected foodscape area.
-
--I am considering utilizing visualizations with kde plots that aggregate based on the definition of various foodscape phenomena (food swamp, desert, areas of healthy foods).
-
--For Web design, I am looking into using the mapbox framework for user interface design. I am also going to look into adding a mapbox (or smililar) geocoder to the website so that people can investigate specific locations, by address, in Lexington. I will be exploring further options for the geospatial stack that will be employed for the website and may revert to using leaflet with a general responsive design library to customize web design with mobile users in mind.
+The "RFEI_cat" field will be used for visualization and symbology during website user interaction. It will also be utilized to quantify the exposure to healthy/unhealthy food choices in the selected foodscape area (as determined by the selected radio value) based on methods set forth in [Corskey, et al., 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5708005/pdf/ijerph-14-01366.pdf). I will be researching further options for categorical density visualizations in an attempt to highlight various foodscape phenomena (food swamps, food deserts, areas of high density of healthy food locations).
 
 ### E. User interaction
 
-The user interactions will focus on identifying the user's exposure to potentially healthy and unhealthy food choices in their foodscape. Users will be able to interact with the website and web map in several planned manners, including:
+The user interactions will focus on identifying the user's exposure to potentially healthy and unhealthy food choices in their foodscape. Users will be able to utilize an address geocoder that will place a point of interest on the map and analyze the food environment in a set radius around that point. Alternative methods for adding this point to the map will include a tap/click on a location of interest on the map or by using the "locate me" button next to the geocoder that will utilize location services of the user's device to drop a location on the map. The location of interest will be buffered with a radius that is determined from the radio selector in the bottom left corner of the web map. This will serve as a representation of the user's foodscape based on a 0.25, 0.5, and 1.0 mile radius from their location of interest. These distances should serve as sufficient means of identifying exposure to the foodscape in the user's general geographic location. I anticipate including a button for the user to locate the closest source of fresh, healthy food. The user will be able to zoom in and out of the web map using zoom control. A mouseover or click on a food location will display information about the feature of interest. The user will be able to see an interactive list of potentially healthy and unhealthy food options in their foodscape (area of interest buffered by the distance set from the radio selector).
 
--An address geocoder that will place a point of interest on the map and analyze the food environment in a set radius around that point. Alternative methods for adding this point to the map will include a tap/click on a location of interest on the map or by using the "locate me" button next to the geocoder that will utilize location services of the user's device to drop a location on the map.
-
--The location of interest will be buffered with a radius that is determined from the radio selector in the bottom left corner of the web map. This will serve as a representation of the user's foodscape based on a 0.25, 0.5, and 1.0 mile radius from their location of interest. These distances should serve as sufficient means of identifying exposure to the foodscape in the user's general geographic location.
-
--I anticipate including a button for the user to locate the closest source of fresh, healthy food.
-
--I may explore adding buttons to check the "food swamp" and "food desert" status of the location the user enters into the website. If I choose to implement this feature, I will need to add some additional geospatial data representing food access by census tract.
-
--The user will be able to zoom in and out of the web map using zoom control.
-
--The user will be able to mouseover food locations to obtain information about a feature of interest.
-
--The user will be able to see an interactive list of potentially healthy and unhealthy food options in their foodscape (area of interest buffered by the distance set from the radio selector).
+I plan to research methods to implement buttons to check the "food swamp" and "food desert" status of the user determined location. If I choose to implement this feature, I will need to add some additional geospatial data representing food access by census tract. Categorical density visualizations will also likely be implemented in conjunction with this user interaction features.
 
 ### F. Aesthetics and design considerations
 
--The website will be developed using mobile-first design. I envision the user accessing the website from their mobile device as they move around Lexington, KY. I will likely have a version like the image displayed in the application layout for desktop design, as well. The mobile version will likely be designed with the narrative in the header of the website, the map in the body of the website, and the interactive list of food locations in the footer of the website, in a vertical scroller layout. I generally prefer dark themed base maps with strongly contrasted text. I believe this will be my target for the aesthetics of the website design.
+The web map and website will be developed using mobile-first design. I envision the user accessing the website from their mobile device as they move around Lexington, KY. I will ave a version like the image displayed in the application layout for desktop design, as well. The mobile version will be designed with the narrative in the header of the website, the map in the body of the website, and the interactive list of food locations in the footer of the website, in a vertical scroller layout. I will be implementing a dark themed base maps with strongly contrasted text. 
 
 ### G. Conclusion
 
