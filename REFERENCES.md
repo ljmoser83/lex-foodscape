@@ -17,7 +17,7 @@
 
 * In anticipation of joining the processed data from this notebook to the spatial data asociated with the Kentucky census tracts, I prepared a GeoJSON file using the following ogr2ogr (https://www.gdal.org/ogr2ogr.html) command in OSGeo4W Shell: ogr2ogr -f GeoJSON -t_srs crs:84 -lco COORDINATE_PRECISION= 5 kentucky_census_tracts.geojson cb_2017_21_tract_500k.shp The resultant file is available in the ./data/cb_2017_21_tract_500k/ directory. I will likely start a second notebook that will focus on joining the output from this notebook to the newly generated GeoJSON file and clean up and prepare the resultant GeoJSON for web map optimization. This tutorial will be useful when moving on to the join: https://www.shanelynn.ie/merge-join-dataframes-python-pandas-index-1/
 
-* I have requested block level demographic data from LFUCG PVA. I would like to look at the effect of the resolution of block vs tract level data on how the demographics and other characteristics of the population are impacted (This is a classic example of the MAUP).
+* I have requested block level demographic data from LFUCG PVA. I would like to look at the affect of the resolution of block vs tract level data on how the demographics and other characteristics of the population are impacted (This is a classic example of the MAUP).
 
 * I am considering utilizing visualizations with kde plots that aggregate based on the definition of various foodscape phenomena (food swamp, desert, areas of healthy foods).
 
