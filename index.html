@@ -5,15 +5,15 @@
     <meta charset=utf-8 />
     <title>Lexington, KY Foodscape Mapping Project</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
     <!--links to additional style and font resources -->
     <link href="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css" rel="stylesheet">
     <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+
     <link href='css/styles.css' rel='stylesheet' />
-   <!-- <link href="images/favicon.ico" rel="icon" type="image/x-icon" />-->
+    <!-- <link href="images/favicon.ico" rel="icon" type="image/x-icon" />-->
 </head>
 
 <body class="prose prose--dark bg-gray">
@@ -42,12 +42,12 @@
             <div id="mapid" class='viewport-twothirds viewport-full-ml'></div>
 
             <!-- ui radio -->
-           <!--  <div id='radio' class='range--blue w160 bg-white round-ml p12'>
+            <!--  <div id='radio' class='range--blue w160 bg-white round-ml p12'>
                 <input type='radio' min="2008" , max="2016" , value="2016" , step="1" class="radio" />
             </div>-->
 
             <!-- legend -->
-           <!-- <div id='legend' class='legend bg-white round-ml p18'>
+            <!-- <div id='legend' class='legend bg-white round-ml p18'>
                 <h3 class='mb12 w-full mx-auto txt-m txt-bold '>Title of Legend</h3>
                 <div class='legend-circles relative w180 wmax180'>
                     <div class="legend-large border border--gray-light absolute"></div>
@@ -59,29 +59,15 @@
         </div>
 
     </div>
-    
+
     <!--additional script resource links -->
     <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
-    <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
- <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-   crossorigin=""></script>
-
-   <script>
-   var mymap = L.map('mapid').setView([38.03962, -84.496257], 13);
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoibGptb3NlcjgzIiwiYSI6ImNqMG5sNmI1bjAwY3UzM3Q4cXNncGl6NDMifQ.jAX66dC8oy8Mh4IvgF5SPg'
-    }).addTo(mymap);
-    $.when($.getJSON('data/Lex_Food/lf.json')).done(function(lf){
-        console.log(lf)
-        var myLayer = L.geoJSON().addTo(mapid);
-        myLayer.addData(lf);
-    })
-    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>>
+    <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src='js/app.js'></script>
 
 
 </body>
