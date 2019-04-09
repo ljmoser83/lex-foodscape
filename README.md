@@ -33,7 +33,7 @@ I plan to research methods to implement buttons to check the "food swamp" and "f
 
 ### F. Aesthetics and design considerations
 
-The web map and website will be developed using mobile-first design. I envision the user accessing the website from their mobile device as they move around Lexington, KY.  The mobile version will be designed with the narrative in the header of the website, the map in the body of the website, and the interactive list of food locations in the footer of the website, in a vertical scroller layout. I will have a version designed for desktop that will resemble the image displayed in the application layout section. I will be implementing a dark themed base map and web page with strongly contrasted text. 
+The web map and website will be developed using mobile-first design. I envision the user accessing the website from their mobile device as they move around Lexington, KY. Marker clustering will be utilized to represent the large number of point locations that will be visible at the full extent of the map. As the user zooms into the map these clusters will break up and begin showing individual points. The mobile version will be designed with the narrative in the header of the website, the map in the body of the website, and the interactive list of food locations in the footer of the website, in a vertical scroller layout. I will have a version designed for desktop that will resemble the image displayed in the application layout section. I will be implementing a dark themed base map and web page with strongly contrasted text. 
 
 ### G. Conclusion
 
