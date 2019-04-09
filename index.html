@@ -78,7 +78,8 @@
     }).addTo(mymap);
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function(lf){
         console.log(lf)
-        L.geoJSON(lf).addTo(mapid);
+        var myLayer = L.geoJSON().addTo(mapid);
+        myLayer.addData(lf);
     })
     </script>
 
