@@ -76,7 +76,7 @@
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoibGptb3NlcjgzIiwiYSI6ImNqMG5sNmI1bjAwY3UzM3Q4cXNncGl6NDMifQ.jAX66dC8oy8Mh4IvgF5SPg'
     }).addTo(mymap);
-    $.when($.getJSON('data/Lex_Food/lf.json')).done(function(lf){
+    $.when($.geoJSON('data/Lex_Food/lf.json')).done(function(lf){
         L.getJSON(lf).addTo(mapid);
     })
     </script>
