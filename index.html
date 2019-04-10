@@ -7,7 +7,7 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <!--links to additional style and font resources -->
-    <link href="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css" rel="stylesheet">
     <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
@@ -42,32 +42,32 @@
             <div id="map" class='viewport-twothirds viewport-full-ml'></div>
 
             <!-- ui radio -->
-            <div id='radio-container' class='range--blue w160 bg-white round-ml p12'>
-                <h3>Area of Interest (miles)</h3>
-                <div>
-                    <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
+            <div id='radio-container' class='range--blue w160 bg-white round-ml px6 py6 txt-h4 mb18'>
+                Area of Interest (miles)
+                
+                    <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')" >
                     <label for="0.25">0.25</label>
-                </div>
+                
 
-                <div>
-                    <input type="radio" id="radio" name="dist" value="0.5" onclick="alert('This button will set the radius of the area of interest to 0.5 miles!')">
+                
+                    <input type="radio" id="radio" name="dist" value="0.5" onclick="alert('This button will set the radius of the area of interest to 0.5 miles!')" >
                     <label for="0.5">0.5</label>
-                </div>
+                
 
-                <div>
-                    <input type="radio" id="radio" name="dist" value="1.0" onclick="alert('This button will set the radius of the area of interest to 1.0 miles!')">
+                
+                    <input type="radio" id="radio" name="dist" value="1.0" onclick="alert('This button will set the radius of the area of interest to 1.0 miles!')" >
                     <label for="1.0">1.0</label>
-                </div>
+                
             </div>
-            <button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class='bg-white'>
-                <h2>Locate Nearest Healthy Option</h2>
+            <button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class='btn round'>
+                Locate Nearest Healthy Option
             </button>
 
 
             <div id="geocode">
-                <input type="text" id="address" name="geocode" size="30" placeholder="Enter Address of Interest Here">
-                <button onclick="alert('address submitted for geocoding!')" class='bg-white'>
-                    <h2>Submit</h2>
+                <input type="text" id="address" name="geocode" size="30" placeholder="Enter Address of Interest Here" class='txt-h4'>
+                <button onclick="alert('address submitted for geocoding!')" class='btn round'>
+                    Submit
                 </button>
             </div>
 
@@ -76,10 +76,10 @@
     </div>
 
     <!--additional script resource links -->
-    <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js"></script>
+    <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
     <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src='js/app.js'></script>
