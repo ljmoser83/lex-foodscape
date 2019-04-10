@@ -40,22 +40,33 @@
         </div>
         <div class='col col--12 col--9-ml h180 h-full-ml'>
             <div id="map" class='viewport-twothirds viewport-full-ml'></div>
-
+                        
             <!-- ui radio -->
-            <!--  <div id='radio' class='range--blue w160 bg-white round-ml p12'>
-                <input type='radio' min="2008" , max="2016" , value="2016" , step="1" class="radio" />
-            </div>-->
+<div id='radio-container' class='range--blue w160 bg-white round-ml p12'>          
+<h3>Area of Interest (miles)</h3>
+<div> 
+ <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
+  <label for="0.25">0.25</label>
+</div> 
 
-            <!-- legend -->
-            <!-- <div id='legend' class='legend bg-white round-ml p18'>
-                <h3 class='mb12 w-full mx-auto txt-m txt-bold '>Title of Legend</h3>
-                <div class='legend-circles relative w180 wmax180'>
-                    <div class="legend-large border border--gray-light absolute"></div>
-                    <div class="legend-small border border--gray-light absolute"></div>
-                    <div class="legend-large-label txt-m absolute"></div>
-                    <div class="legend-small-label txt-m absolute"></div>
-                </div>
-            </div> -->
+<div>
+  <input type="radio" id="radio" name="dist" value="0.5" onclick="alert('This button will set the radius of the area of interest to 0.5 miles!')">
+  <label for="0.5">0.5</label>
+</div>
+
+<div>
+  <input type="radio" id="radio" name="dist" value="1.0" onclick="alert('This button will set the radius of the area of interest to 1.0 miles!')">
+  <label for="1.0">1.0</label>
+</div>
+            </div>
+<button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class='bg-white'><h2>Locate Nearest Healthy Option</h2></button>
+
+            
+<div id="geocode">
+<input type="text" id="address" name="geocode" size="30" placeholder="Enter Address of Interest Here">
+    <button onclick="alert('address submitted for geocoding!')" class='bg-white'><h2>Submit</h2></button>
+</div>            
+
         </div>
 
     </div>
