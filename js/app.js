@@ -11,8 +11,8 @@ $(function () {
     L.marker([38.03962, -84.496257]).addTo(mymap)
         .bindPopup('Lex-Foodscape is under construction.')
         .openPopup();
-    
-     var radioControl = L.control({
+
+    var radioControl = L.control({
         position: 'bottomleft'
     });
 
@@ -53,8 +53,8 @@ $(function () {
 
     // add the control to the map
     healthyControl.addTo(mymap);
-    
-     var geocodeControl = L.control({
+
+    var geocodeControl = L.control({
         position: 'topright'
     });
 
@@ -74,7 +74,7 @@ $(function () {
 
     // add the control to the map
     geocodeControl.addTo(mymap);
-    
+
     $.when($.getJSON('data/C/C.json'),
         $.getJSON('data/F/F.json'),
         $.getJSON('data/G/G.json'),
