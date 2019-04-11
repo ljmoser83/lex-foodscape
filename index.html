@@ -10,14 +10,11 @@
     <link href="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css" rel="stylesheet">
     <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
-    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
-
     <link href='css/styles.css' rel='stylesheet' />
     <!-- <link href="images/favicon.ico" rel="icon" type="image/x-icon" />-->
 </head>
 
 <body class="prose prose--dark bg-gray">
-    <!--body of the website that will be on the left side of the screen and contain text and image -->
 
     <div class='grid'>
         <div class='col col--12 col--3-ml p12 pb6 viewport-third viewport-full-ml'>
@@ -25,10 +22,10 @@
                 <h3 class='txt-m mb6 align-center mt6 mr24'>
                     Lexington, KY Foodscape Mapping Project</h3>
                 <!--<img src='images/.jpg' alt="" class='mb24 pic ' height="268" width="348">-->
-                <p class="txt-s mb6 mr24">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the foodscape concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions. Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).</p>
-                <div class='txt-m mt6 mb12 mr24'></div>
-                <p class="txt-s mb6 mr24"></p>
-                <footer class='prose prose--dark bg-gray txt-s'>
+                <p class="txt-s mb6 mr24 mt12">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the foodscape concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions. </p>
+                <p class="txt-s mb6 mr24 mt12">Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).</p>
+
+                <footer class='prose prose--dark bg-gray txt-s absolute bottom'>
                     <ul>
                         <li>Explore the raw <a href='https://github.com/ljmoser83/lex-foodscape/tree/master/data'>data</a></li>
                         <li>Map authored by <a href='https://ljmoser83.github.io/'>Lee Moser</a></li>
@@ -44,20 +41,20 @@
             <!-- ui radio -->
             <div id='radio-container' class='range--blue w160 bg-white round-ml px6 py6 txt-h4 mb18'>
                 Area of Interest (miles)
-                
-                    <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')" >
-                    <label for="0.25">0.25</label>
-                
 
-                
-                    <input type="radio" id="radio" name="dist" value="0.5" onclick="alert('This button will set the radius of the area of interest to 0.5 miles!')" >
-                    <label for="0.5">0.5</label>
-                
+                <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
+                <label for="0.25">0.25</label>
 
-                
-                    <input type="radio" id="radio" name="dist" value="1.0" onclick="alert('This button will set the radius of the area of interest to 1.0 miles!')" >
-                    <label for="1.0">1.0</label>
-                
+
+
+                <input type="radio" id="radio" name="dist" value="0.5" onclick="alert('This button will set the radius of the area of interest to 0.5 miles!')">
+                <label for="0.5">0.5</label>
+
+
+
+                <input type="radio" id="radio" name="dist" value="1.0" onclick="alert('This button will set the radius of the area of interest to 1.0 miles!')">
+                <label for="1.0">1.0</label>
+
             </div>
             <button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class='btn round'>
                 Locate Nearest Healthy Option
@@ -78,10 +75,9 @@
     <!--additional script resource links -->
     <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
     <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src='js/app.js'></script>
 
 
