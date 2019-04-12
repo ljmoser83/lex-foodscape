@@ -78,14 +78,40 @@
     geocodeControl.addTo(mymap);
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function (lf) {
 
-
+        console.log(lf);
         var food = L.markerClusterGroup();
+        var cIcon = L.icon({
+            iconUrl: 'images/c.png'
+        });
+
+        var fIcon = L.icon({
+            iconUrl: 'images/f.png'
+        });
+
+        var gIcon = L.icon({
+            iconUrl: 'images/g.png'
+        });
+
+        var lIcon = L.icon({
+            iconUrl: 'images/l.png'
+        });
+
+        function color(feature) {
+            var icon;
+            if (feature.properties.RFEI_cat == "C") icon = cIcon;
+            else if (feature.properties.RFEI_cat == "F") icon = fIcon;
+            else if (feature.properties.RFEI_cat == "L") icon = gIcon;
+            else icon = lIcon;
+
+            return icon;
+        }
 
         // loop through all our signals features
         lf.features.forEach(function (feature) {
             // create a new Leaflet marker for each
-            var coords = feature.geometry.coordinates,
-                marker = L.marker([coords[1], coords[0]]);
+            var coords = feature.geometry.coordinates;
+            cat = feature.properties.RFEI_cat;
+            marker = L.marker([coords[1], coords[0]], {icon: color(feature)});
             // bind a tooltip to the marker
             marker.bindTooltip("Name: " + feature.properties.Name);
             // add the marker to the markerClusterGroup
