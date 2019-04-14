@@ -76,9 +76,55 @@
 
     // add the control to the map
     geocodeControl.addTo(mymap);
+
+
+    var legendControl = L.control({
+        position: 'bottomright'
+    });
+
+    // when added to the map
+    legendControl.onAdd = function (map) {
+
+        // select the element with id of 'slider'
+        var controls = L.DomUtil.get("legend");
+
+        // disable the mouse events
+        L.DomEvent.disableScrollPropagation(controls);
+        L.DomEvent.disableClickPropagation(controls);
+
+        // add slider to the control
+        return controls;
+    }
+
+    // add the control to the map
+    legendControl.addTo(mymap);
+
+    
+        var ratioControl = L.control({
+        position: 'topleft'
+    });
+
+    // when added to the map
+    ratioControl.onAdd = function (map) {
+
+        // select the element with id of 'slider'
+        var controls = L.DomUtil.get("ratio");
+
+        // disable the mouse events
+        L.DomEvent.disableScrollPropagation(controls);
+        L.DomEvent.disableClickPropagation(controls);
+
+        // add slider to the control
+        return controls;
+    }
+
+    // add the control to the map
+    ratioControl.addTo(mymap);
+    
+    
+    
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function (lf) {
 
-        console.log(lf);
         var food = L.markerClusterGroup();
         var cIcon = L.icon({
             iconUrl: 'images/c.png'
@@ -100,8 +146,8 @@
             var icon;
             if (feature.properties.RFEI_cat == "C") icon = cIcon;
             else if (feature.properties.RFEI_cat == "F") icon = fIcon;
-            else if (feature.properties.RFEI_cat == "L") icon = gIcon;
-            else icon = lIcon;
+            else if (feature.properties.RFEI_cat == "L") icon = lIcon;
+            else icon = gIcon;
 
             return icon;
         }
@@ -111,7 +157,9 @@
             // create a new Leaflet marker for each
             var coords = feature.geometry.coordinates;
             cat = feature.properties.RFEI_cat;
-            marker = L.marker([coords[1], coords[0]], {icon: color(feature)});
+            marker = L.marker([coords[1], coords[0]], {
+                icon: color(feature)
+            });
             // bind a tooltip to the marker
             marker.bindTooltip("Name: " + feature.properties.Name);
             // add the marker to the markerClusterGroup

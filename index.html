@@ -12,19 +12,20 @@
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.Default.css">
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.css">
     <link href='css/styles.css' rel='stylesheet' />
-    <!-- <link href="images/favicon.ico" rel="icon" type="image/x-icon" />-->
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 
 <body>
 
     <div class='grid'>
-        <div class='col col--12 col--3-ml p12 pb6 viewport-third viewport-full-ml'>
+        <div class='col col--12 col--3-ml p12 viewport-third viewport-full-ml'>
             <div class='prose prose--dark bg-gray h-full scroll-auto'>
                 <h3 class='txt-m mb6 align-center mt6 mr24'>
                     Lexington, KY Foodscape Mapping Project</h3>
                 <!--<img src='images/.jpg' alt="" class='mb24 pic ' height="268" width="348">-->
                 <p class="txt-s mb6 mr24 mt12">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the foodscape concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions. </p>
                 <p class="txt-s mb6 mr24 mt12">Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).</p>
+                <p class="txt-s mb6 mr24 mt12">The user interactions will focus on identifying the user's exposure to potentially healthy and unhealthy food choices in their foodscape. Users will be able to utilize an address geocoder that will place a point of interest on the map and analyze the food environment in a set radius around that point. Alternative methods for adding this point to the map will include a tap/click on a location of interest on the map or by using the "locate me" button next to the geocoder that will utilize location services of the user's device to drop a location on the map. The location of interest will be buffered with a radius that is determined from the radio selector in the bottom left corner of the web map. This will serve as a representation of the user's foodscape based on a 0.25, 0.5, and 1.0 mile radius from their location of interest. These distances should serve as a suitable means of identifying exposure to the foodscape in the user's geographic location.</p>
 
                 <footer class='prose prose--dark bg-gray txt-s absolute bottom'>
                     <ul>
@@ -40,7 +41,7 @@
             <div id="map" class='viewport-twothirds viewport-full-ml'></div>
 
             <!-- ui radio -->
-            <div id='radio-container' class='range--blue w160 bg-white round-ml px6 py6 txt-h4 mb18'>
+            <div id='radio-container' style="font-weight:bold;" class='range--blue w160 bg-white round-ml px6 py6 txt-h4 mb18'>
                 Area of Interest (miles)
 
                 <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
@@ -69,6 +70,39 @@
                 </button>
             </div>
 
+            <div id="legend" class="bg-white round-ml px6 py6">
+                <div>
+                    <p class='txt-h4' style="font-weight:bold;">Legend</p>
+                </div>
+                <div>
+                    <p class="mb12">Convenience <img style="float: right;" src='images/c.png'></p>
+                </div>
+                <div>
+                    <div>
+                        <p class="mb12">Fast Food <img style="float: right;" src='images/f.png'></p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p class="mb12">Limited Service <img style="float: right;" src='images/l.png'></p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p class="mb12">Grocery Store <img style="float: right;" src='images/g.png'></p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div id='ratio' class="bg-white round-ml px6 py6">
+                <p style="font-weight:bold;" class="mb24">Healthy/Unhealthy <br> Food Choice Ratio</p>
+
+                <div class="ratio mb24">
+                    <p style="font-weight:bold; text-align: center;">---</p>
+                </div>
+            </div>
         </div>
 
     </div>
