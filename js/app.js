@@ -11,7 +11,7 @@
     }).addTo(mymap);
 
     L.marker([38.03962, -84.496257]).addTo(mymap)
-        .bindPopup('Lex-Foodscape is under construction.')
+        .bindPopup('lex-foodscape is under construction.')
         .openPopup();
 
     var radioControl = L.control({
@@ -21,18 +21,18 @@
     // when added to the map
     radioControl.onAdd = function (map) {
 
-        // select the element with id of 'slider'
+        // select the element with id of 'radio-container'
         var controls = L.DomUtil.get("radio-container");
 
         // disable the mouse events
         L.DomEvent.disableScrollPropagation(controls);
         L.DomEvent.disableClickPropagation(controls);
 
-        // add slider to the control
+        // add radio-container to the control
         return controls;
     }
 
-    // add the control to the map
+    // add the radioControl to the map
     radioControl.addTo(mymap);
 
     var healthyControl = L.control({
@@ -42,18 +42,18 @@
     // when added to the map
     healthyControl.onAdd = function (map) {
 
-        // select the element with id of 'slider'
+        // select the element with id of 'healthy'
         var controls = L.DomUtil.get("healthy");
 
         // disable the mouse events
         L.DomEvent.disableScrollPropagation(controls);
         L.DomEvent.disableClickPropagation(controls);
 
-        // add slider to the control
+        // add healthy to the control
         return controls;
     }
 
-    // add the control to the map
+    // add the healthyControl to the map
     healthyControl.addTo(mymap);
 
     var geocodeControl = L.control({
@@ -63,18 +63,18 @@
     // when added to the map
     geocodeControl.onAdd = function (map) {
 
-        // select the element with id of 'slider'
+        // select the element with id of 'geocode'
         var controls = L.DomUtil.get("geocode");
 
         // disable the mouse events
         L.DomEvent.disableScrollPropagation(controls);
         L.DomEvent.disableClickPropagation(controls);
 
-        // add slider to the control
+        // add geocode to the control
         return controls;
     }
 
-    // add the control to the map
+    // add the geocodeControl to the map
     geocodeControl.addTo(mymap);
 
 
@@ -85,18 +85,18 @@
     // when added to the map
     legendControl.onAdd = function (map) {
 
-        // select the element with id of 'slider'
+        // select the element with id of 'legend'
         var controls = L.DomUtil.get("legend");
 
         // disable the mouse events
         L.DomEvent.disableScrollPropagation(controls);
         L.DomEvent.disableClickPropagation(controls);
 
-        // add slider to the control
+        // add legend to the control
         return controls;
     }
 
-    // add the control to the map
+    // add the legendControl to the map
     legendControl.addTo(mymap);
 
     
@@ -107,18 +107,18 @@
     // when added to the map
     ratioControl.onAdd = function (map) {
 
-        // select the element with id of 'slider'
+        // select the element with id of 'ratio'
         var controls = L.DomUtil.get("ratio");
 
         // disable the mouse events
         L.DomEvent.disableScrollPropagation(controls);
         L.DomEvent.disableClickPropagation(controls);
 
-        // add slider to the control
+        // add ratio to the control
         return controls;
     }
 
-    // add the control to the map
+    // add the ratioControl to the map
     ratioControl.addTo(mymap);
     
     
