@@ -41,8 +41,9 @@
             <div id="map" class='viewport-twothirds viewport-full-ml'></div>
 
             <!-- ui radio -->
-            <div id='radio-container' style="font-weight:bold;" class='range--blue w160 bg-white round-ml px6 py6 txt-h4 mb18'>
-                Area of Interest (miles)
+            
+            <div id='radio-container' style="font-weight:bold;" class='range--blue bg-white round-ml px6 py6 txt-h4 mb18'>
+                <div class="w80">Area of Interest (miles)</div>
 
                 <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
                 <label for="0.25">0.25</label>
@@ -58,17 +59,21 @@
                 <label for="1.0">1.0</label>
 
             </div>
+                
+              
             <button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class='btn round'>
-                Locate Nearest Healthy Option
+                <div>Locate Nearest</div> Healthy Option
             </button>
 
 
-            <div id="geocode">
-                <input type="text" id="address" name="geocode" size="30" placeholder="Enter Address of Interest Here" class='txt-h4'>
-                <button onclick="alert('address submitted for geocoding!')" class='btn round'>
-                    Submit
+            <div id="geocode" class='flex-parent'>
+                <input type="text" id="address" name="geocode" placeholder="Enter Address of Interest" class='bg-white input border-r--0 round-l'>
+                <button onclick="alert('address submitted for geocoding!')" class='btn px24 round-r'>
+                    Search
                 </button>
             </div>
+            
+            
 
             <div id="legend" class="bg-white round-ml px6 py6">
                 <div>
