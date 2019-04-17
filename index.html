@@ -8,7 +8,7 @@
 
     <!--links to additional style and font resources -->
     <link href="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css" rel="stylesheet">
-    <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.Default.css">
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.css">
     <link href='css/styles.css' rel='stylesheet' />
@@ -38,11 +38,11 @@
 
         </div>
         <div class='col col--12 col--9-ml h180 h-full-ml'>
-            <div id="map" class='viewport-twothirds viewport-full-ml'></div>
+            <div id="map" class='grid viewport-twothirds viewport-full-ml'></div>
 
             <!-- ui radio -->
-            
-            <div id='radio-container' style="font-weight:bold;" class='range--blue bg-white round-ml px6 py6 txt-h4 mb18'>
+
+            <div id='radio-container' style="font-weight:bold;" class='range--blue bg-white round-ml px6 py6 mb18'>
                 <div class="w80">Area of Interest (miles)</div>
 
                 <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
@@ -59,10 +59,10 @@
                 <label for="1.0">1.0</label>
 
             </div>
-                
-              
+
+
             <button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class='btn round'>
-                <div>Locate Nearest</div> Healthy Option
+                <div>Locate Nearest Healthy Option </div>
             </button>
 
 
@@ -72,29 +72,30 @@
                     Search
                 </button>
             </div>
-            
-            
+
+
+
 
             <div id="legend" class="bg-white round-ml px6 py6">
                 <div>
                     <p class='txt-h4' style="font-weight:bold;">Legend</p>
                 </div>
                 <div>
-                    <p class="mb12">Convenience <img style="float: right;" src='images/c.png'></p>
+                    <p class="mb12">Convenience<img style="float: right;" src='images/c.png'></p>
                 </div>
                 <div>
                     <div>
-                        <p class="mb12">Fast Food <img style="float: right;" src='images/f.png'></p>
+                        <p class="mb12">Fast Food<img style="float: right;" src='images/f.png'></p>
                     </div>
                 </div>
                 <div>
                     <div>
-                        <p class="mb12">Limited Service <img style="float: right;" src='images/l.png'></p>
+                        <p class="mb12">Limited Service<img style="float: right;" src='images/l.png'></p>
                     </div>
                 </div>
                 <div>
                     <div>
-                        <p class="mb12">Grocery Store <img style="float: right;" src='images/g.png'></p>
+                        <p class="mb12">Grocery Store<img style="float: right;" src='images/g.png'></p>
                     </div>
                 </div>
 
@@ -114,7 +115,7 @@
 
     <!--additional script resource links -->
     <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.js"></script>
-    <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
     <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src='js/app.js'></script>
