@@ -15,3 +15,7 @@ section {
 .map {
     height: 600px;
 }
+
+.tooltip {
+    z-index: 2001;
+}
