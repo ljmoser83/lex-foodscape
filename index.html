@@ -1,123 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset=utf-8 />
-    <title>lex-foodscape</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
-    <!--links to additional style and font resources -->
-    <link href="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>lex-foodscape</title>
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Leaflet and Leaflet.markercluster CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.Default.css">
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.css">
-    <link href='css/styles.css' rel='stylesheet' />
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+
+    <!-- sidebar CSS-->
+    <link rel="stylesheet" href="css/leaflet-sidebar.css" />
+
 </head>
 
-<body>
+<body id="page-top">
 
-    <div class='grid'>
-        <div class='col col--12 col--3-ml p12 viewport-third viewport-full-ml'>
-            <div class='prose prose--dark bg-gray h-full scroll-auto'>
-                <h3 class='txt-m mb6 align-center mt6 mr24'>
-                    </h3>
-                <!--<img src='images/.jpg' alt="" class='mb24 pic ' height="268" width="348">-->
-                <p class="txt-s mb6 mr24 mt12">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the foodscape concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions. </p>
-                <p class="txt-s mb6 mr24 mt12">Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).</p>
-                <p class="txt-s mb6 mr24 mt12">The user interactions will focus on identifying the user's exposure to potentially healthy and unhealthy food choices in their foodscape. Users will be able to utilize an address geocoder that will place a point of interest on the map and analyze the food environment in a set radius around that point. Alternative methods for adding this point to the map will include a tap/click on a location of interest on the map or by using the "locate me" button next to the geocoder that will utilize location services of the user's device to drop a location on the map. The location of interest will be buffered with a radius that is determined from the radio selector in the bottom left corner of the web map. This will serve as a representation of the user's foodscape based on a 0.25, 0.5, and 1.0 mile radius from their location of interest. These distances should serve as a suitable means of identifying exposure to the foodscape in the user's geographic location.</p>
-
-                <footer class='prose prose--dark bg-gray txt-s absolute bottom'>
-                    <ul>
-                        <li>Explore the raw <a href='https://github.com/ljmoser83/lex-foodscape/tree/master/data'>data</a></li>
-                        <li>Map authored by <a href='https://ljmoser83.github.io/'>Lee Moser</a></li>
-                    </ul>
-
-                </footer>
-            </div>
-
-        </div>
-        <div class='col col--12 col--9-ml h180 h-full-ml'>
-            <div id="map" class='grid viewport-twothirds viewport-full-ml'></div>
-
-            <!-- ui radio -->
-
-            <div id='radio-container' style="font-weight:bold;" class='range--blue bg-white round-ml px6 py6 mb18'>
-                <div class="w80">Area of Interest (miles)</div>
-
-                <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
-                <label for="0.25">0.25</label>
-
-
-
-                <input type="radio" id="radio" name="dist" value="0.5" onclick="alert('This button will set the radius of the area of interest to 0.5 miles!')">
-                <label for="0.5">0.5</label>
-
-
-
-                <input type="radio" id="radio" name="dist" value="1.0" onclick="alert('This button will set the radius of the area of interest to 1.0 miles!')">
-                <label for="1.0">1.0</label>
-
-            </div>
-
-
-            <button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class='btn round'>
-                <div>Locate Nearest Healthy Option </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">lex-foodscape</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#mapp">Map</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <header class="bg-primary text-white">
+        <div class="container text-center">
+            <h1>Lexington, KY Foodscape Mapping Project</h1>
+        </div>
+    </header>
 
-            <div id="geocode" class='flex-parent'>
-                <input type="text" id="address" name="geocode" placeholder="Enter Address of Interest" class='bg-white input border-r--0 round-l'>
-                <button onclick="alert('address submitted for geocoding!')" class='btn px24 round-r'>
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mx-auto height">
+                    <p class="lead text-justify">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the foodscape concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions.</p>
+                    <p class="lead text-justify">Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mapp" class="bg-light col-lg-8 mx-auto">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-12 mx-auto map sidebar-map" id='map'>
+                    <div id="sidebar" class="sidebar collapsed">
+                        <!-- Nav tabs -->
+                        <div class="sidebar-tabs">
+                            <ul role="tablist">
+                                <li><a href="#home" role="tab"><i class="fas fa-info-circle"></i></a></li>
+                                <li><a href="#profile" role="tab"><i class="fas fa-map-marker-alt"></i></a></li>
+                                <li><a href="#legends" role="tab"><i class="fas fa-map-signs"></i></a></li>
+                            </ul>
+
+                            <ul role="tablist">
+                                <li><a href="#settings" role="tab"><i class="fas fa-apple-alt"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab panes -->
+                        <div class="sidebar-content">
+                            <div class="sidebar-pane" id="home">
+                                <h1 class="sidebar-header">
+                                    How to Use the Map Interface
+                                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                                </h1>
+
+                                <p class="text-justify">The user interactions will focus on identifying the user's exposure to potentially healthy and unhealthy food choices in their foodscape. Users will be able to utilize an address geocoder that will place a point of interest on the map and analyze the food environment in a set radius around that point. Alternative methods for adding this point to the map will include a tap/click on a location of interest on the map or by using the "locate me" button next to the geocoder that will utilize location services of the user's device to drop a location on the map. The location of interest will be buffered with a radius that is determined from the radio selector in the bottom left corner of the web map. This will serve as a representation of the user's foodscape based on a 0.25, 0.5, and 1.0 mile radius from their location of interest. These distances should serve as a suitable means of identifying exposure to the foodscape in the user's geographic location.</p>
+                            </div>
+
+                            <div class="sidebar-pane" id="profile">
+                                <h1 class="sidebar-header">Geocode<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                                <div id="geocode" class='flex-parent'>
+                                    <input type="text" id="address" name="geocode" placeholder="Enter Address of Interest" class='bg-white input border-r--0 round-l'>
+                                    <button onclick="alert('address submitted for geocoding!')" class='btn px24 round-r'>
                     Search
                 </button>
-            </div>
+                                </div>
+                                <div id='radio-container' style="font-weight:bold;" class='range--blue bg-white round-ml px6 py6 mb18'>
+                                    <div class="w80">Area of Interest (miles)</div>
+
+                                    <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
+                                    <label for="0.25">0.25</label>
 
 
 
+                                    <input type="radio" id="radio" name="dist" value="0.5" onclick="alert('This button will set the radius of the area of interest to 0.5 miles!')">
+                                    <label for="0.5">0.5</label>
 
-            <div id="legend" class="bg-white round-ml px6 py6">
-                <div>
-                    <p class='txt-h4' style="font-weight:bold;">Legend</p>
-                </div>
-                <div>
-                    <p class="mb12">Convenience<img style="float: right;" src='images/c.png'></p>
-                </div>
-                <div>
-                    <div>
-                        <p class="mb12">Fast Food<img style="float: right;" src='images/f.png'></p>
+
+
+                                    <input type="radio" id="radio" name="dist" value="1.0" onclick="alert('This button will set the radius of the area of interest to 1.0 miles!')">
+                                    <label for="1.0">1.0</label>
+
+                                </div>
+                                <div id='ratio' class="bg-white round-ml px6 py6" style="border:solid">
+                                    <p style="font-weight:bold; text-align: center;" class="mb24">Healthy/Unhealthy <br> Food Choice Ratio</p>
+
+                                    <div class="ratio mb24">
+                                        <p style="font-weight:bold; text-align: center;">---</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-pane" id="legends">
+                                <h1 class="sidebar-header">Legend<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                                <div id="legend" class="bg-white round-ml px6 py6 mt12">
+
+                                    <div>
+                                        <p class="mb12">Convenience<img style="float: right;" src='images/c.png'></p>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <p class="mb12">Fast Food<img style="float: right;" src='images/f.png'></p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <p class="mb12">Limited Service<img style="float: right;" src='images/l.png'></p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <p class="mb12">Grocery Store<img style="float: right;" src='images/g.png'></p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="sidebar-pane" id="settings">
+                                <h1 class="sidebar-header">Locate Nearest Healthy Option<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                                <button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class='btn round'>
+                <div>Locate Nearest Healthy Option </div>
+            </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <p class="mb12">Limited Service<img style="float: right;" src='images/l.png'></p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p class="mb12">Grocery Store<img style="float: right;" src='images/g.png'></p>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div id='ratio' class="bg-white round-ml px6 py6">
-                <p style="font-weight:bold;" class="mb24">Healthy/Unhealthy <br> Food Choice Ratio</p>
-
-                <div class="ratio mb24">
-                    <p style="font-weight:bold; text-align: center;">---</p>
                 </div>
             </div>
         </div>
+    </section>
 
-    </div>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container text-white text-center">
+            <div>Explore the raw <a href='https://github.com/ljmoser83/lex-foodscape/tree/master/data'>data</a></div>
+            <div>Map authored by <a href='https://ljmoser83.github.io/'>Lee Moser</a></div>
+        </div>
+        <!-- /.container -->
+    </footer>
 
-    <!--additional script resource links -->
-    <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.js"></script>
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
-    <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
+
+
+    <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!--Leaflet and markercluster JS -->
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
+
+    <!-- Plugin easing JavaScript -->
+    <script src="js/easing.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <!-- leaflet-sidebar js control extnesion-->
+    <script src="js/leaflet-sidebar.min.js"></script>
+
+    <!--custom js written for map interactivity-->
     <script src='js/app.js'></script>
 
 
