@@ -19,3 +19,7 @@ section {
 .tooltip {
     z-index: 2001;
 }
+
+#mainNav {
+    z-index: 2002;
+}
