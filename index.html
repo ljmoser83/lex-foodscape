@@ -28,7 +28,6 @@
 </head>
 
 <body id="page-top">
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <div class="container">
@@ -48,13 +47,11 @@
             </div>
         </div>
     </nav>
-
     <header class="bg-primary text-white">
         <div class="container text-center">
             <h1>Lexington, KY Foodscape Mapping Project</h1>
         </div>
     </header>
-
     <section id="about">
         <div class="container">
             <div class="row">
@@ -65,13 +62,9 @@
             </div>
         </div>
     </section>
-
     <section id="mapp" class="bg-light col-lg-8 mx-auto">
-
         <div class="container">
-
             <div class="row">
-
                 <div class="col-lg-12 mx-auto map sidebar-map" id='map'>
                     <div id="sidebar" class="sidebar collapsed">
                         <!-- Nav tabs -->
@@ -81,12 +74,10 @@
                                 <li><a href="#tools" role="tab"><i class="fas fa-map-marker-alt" data-toggle="tooltip" title="Map Tools"></i></a></li>
                                 <li><a href="#legends" role="tab"><i class="fas fa-map-signs" data-toggle="tooltip" title="Legend"></i></a></li>
                             </ul>
-
                             <ul role="tablist">
                                 <li><a href="#healthy" role="tab"><i class="fas fa-apple-alt" data-toggle="tooltip" title="Locate Nearest Healthy Food Option"></i></a></li>
                             </ul>
                         </div>
-
                         <!-- Tab panes -->
                         <div class="sidebar-content">
                             <div class="sidebar-pane" id="tutorial">
@@ -94,10 +85,8 @@
                                     Tutorial
                                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                                 </h1>
-
                                 <p class="text-justify mt-2">The user interactions will focus on identifying the user's exposure to potentially healthy and unhealthy food choices in their foodscape. Users will be able to utilize an address geocoder that will place a point of interest on the map and analyze the food environment in a set radius around that point. Alternative methods for adding this point to the map will include a tap/click on a location of interest on the map or by using the "locate me" button next to the geocoder that will utilize location services of the user's device to drop a location on the map. The location of interest will be buffered with a radius that is determined from the radio selector in the bottom left corner of the web map. This will serve as a representation of the user's foodscape based on a 0.25, 0.5, and 1.0 mile radius from their location of interest. These distances should serve as a suitable means of identifying exposure to the foodscape in the user's geographic location.</p>
                             </div>
-
                             <div class="sidebar-pane" id="tools">
                                 <h1 class="sidebar-header">Map Tools<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
                                 <div id="geocode" class="input-group mt-2">
@@ -109,7 +98,6 @@
                                 <button type='button' id='locate' onclick="alert('This button will use location services to obtain the current location and analyze from that point.')" class='btn btn-primary mt-2'>
                 <div>Use Current Location</div>
             </button>
-
                                 <div id='radio-container' style="font-weight:bold;" class='mt-2'>
                                     <div class="lead">Area of Interest (miles)</div>
                                     <div class="container">
@@ -139,7 +127,6 @@
                             <div class="sidebar-pane" id="legends">
                                 <h1 class="sidebar-header">Legend<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
                                 <div id="legend" class="mt-2 border p-2">
-
                                     <div>
                                         <p class="lead">Convenience<img style="float: right;" src='images/c.png'></p>
                                     </div>
@@ -172,17 +159,12 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container text-white text-center">
             <div>Explore the raw <a href='https://github.com/ljmoser83/lex-foodscape/tree/master/data'>data</a></div>
             <div>Map authored by <a href='https://ljmoser83.github.io/'>Lee Moser</a></div>
         </div>
-        <!-- /.container -->
     </footer>
-
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
@@ -204,7 +186,6 @@
 
     <!--custom js written for map interactivity-->
     <script src='js/app.js'></script>
-
 
 </body>
 
