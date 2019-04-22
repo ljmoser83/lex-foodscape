@@ -1,5 +1,9 @@
 (function () {
 
+    $('[data-toggle="tooltip"]').tooltip({
+        container: 'body'
+    });
+
     var mymap = L.map('map', {
         zoomControl: false
     }).setView([38.03962, -84.496257], 12);
@@ -25,13 +29,6 @@
         return sb;
     }
     sidebar.addTo(mymap);
-    
-    $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip({
-            container: 'body'
-        });
-
-    });
 
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function (lf) {
 
