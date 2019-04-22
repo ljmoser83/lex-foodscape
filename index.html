@@ -59,7 +59,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mx-auto height">
-                    <p class="lead text-justify">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the foodscape concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions.</p>
+                    <p class="lead text-justify">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the <a href='https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754' target='_blank'>foodscape</a> concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions.</p>
                     <p class="lead text-justify">Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).</p>
                 </div>
             </div>
@@ -95,36 +95,40 @@
                                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                                 </h1>
 
-                                <p class="text-justify">The user interactions will focus on identifying the user's exposure to potentially healthy and unhealthy food choices in their foodscape. Users will be able to utilize an address geocoder that will place a point of interest on the map and analyze the food environment in a set radius around that point. Alternative methods for adding this point to the map will include a tap/click on a location of interest on the map or by using the "locate me" button next to the geocoder that will utilize location services of the user's device to drop a location on the map. The location of interest will be buffered with a radius that is determined from the radio selector in the bottom left corner of the web map. This will serve as a representation of the user's foodscape based on a 0.25, 0.5, and 1.0 mile radius from their location of interest. These distances should serve as a suitable means of identifying exposure to the foodscape in the user's geographic location.</p>
+                                <p class="text-justify mt-2">The user interactions will focus on identifying the user's exposure to potentially healthy and unhealthy food choices in their foodscape. Users will be able to utilize an address geocoder that will place a point of interest on the map and analyze the food environment in a set radius around that point. Alternative methods for adding this point to the map will include a tap/click on a location of interest on the map or by using the "locate me" button next to the geocoder that will utilize location services of the user's device to drop a location on the map. The location of interest will be buffered with a radius that is determined from the radio selector in the bottom left corner of the web map. This will serve as a representation of the user's foodscape based on a 0.25, 0.5, and 1.0 mile radius from their location of interest. These distances should serve as a suitable means of identifying exposure to the foodscape in the user's geographic location.</p>
                             </div>
 
                             <div class="sidebar-pane" id="tools">
                                 <h1 class="sidebar-header">Map Tools<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-                                <div id="geocode" class='flex-parent'>
-                                    <input type="text" id="address" name="geocode" placeholder="Enter Address of Interest" class=''>
-                                     <button onclick="alert('address submitted for geocoding!')" class=''>
-                    Search
-                </button>
+                                <div id="geocode" class="input-group mb-3 mt-2">
+                                    <input type="text" class="form-control" placeholder="Enter Address of Interest">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button" id="button-addon2" onclick="alert('This button will set typed location as the point of interest to be buffered adn analyzed!')">Search</button>
+                                    </div>
                                 </div>
-                                <div id='radio-container' style="font-weight:bold;" class=''>
-                                    <div class="">Area of Interest (miles)</div>
+                                <button class="btn btn-primary" type="button" id="button-addon2" onclick="alert('This button will set user's current location as the point of interest to be buffered adn analyzed!')">Use My Current Location</button>
+                                
+                                <div id='radio-container' style="font-weight:bold;" class='mt-2'>
+                                    <div class="lead">Area of Interest (miles)</div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="custom-control custom-radio col-sm">
+                                                <input type="radio" id="customRadio1" name="dist" value="0.25" checked class="custom-control-input" onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
+                                                <label class="custom-control-label" for="customRadio1">0.25</label>
+                                            </div>
 
-                                    <input type="radio" id="radio" name="dist" value="0.25" checked onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
-                                    <label for="0.25">0.25</label>
-
-
-
-                                    <input type="radio" id="radio" name="dist" value="0.5" onclick="alert('This button will set the radius of the area of interest to 0.5 miles!')">
-                                    <label for="0.5">0.5</label>
-
-
-
-                                    <input type="radio" id="radio" name="dist" value="1.0" onclick="alert('This button will set the radius of the area of interest to 1.0 miles!')">
-                                    <label for="1.0">1.0</label>
-
+                                            <div class="custom-control custom-radio col-sm">
+                                                <input type="radio" id="customRadio2" name="dist" value="0.5" class="custom-control-input" onclick="alert('This button will set the radius of the area of interest to 0.5 miles!')">
+                                                <label class="custom-control-label" for="customRadio2">0.5</label>
+                                            </div>
+                                            <div class="custom-control custom-radio col-sm">
+                                                <input type="radio" id="customRadio3" name="dist" value="1.0" class="custom-control-input" onclick="alert('This button will set the radius of the area of nterest to 1.0 miles!')">
+                                                <label class="custom-control-label" for="customRadio3">1.0</label> </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id='ratio' class="" style="border:solid">
-                                    <p style="font-weight:bold; text-align: center;" class="">Healthy/Unhealthy <br> Food Choice Ratio</p>
+                                <div id='ratio' class="border mt-2">
+                                    <p style="text-align: center;" class="lead">Healthy/Unhealthy <br> Food Choice Ratio</p>
 
                                     <div class="ratio">
                                         <p style="font-weight:bold; text-align: center;">---</p>
@@ -133,33 +137,31 @@
                             </div>
                             <div class="sidebar-pane" id="legends">
                                 <h1 class="sidebar-header">Legend<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-                                <div id="legend" class="">
+                                <div id="legend" class="mt-2 border p-2">
 
                                     <div>
-                                        <p class="">Convenience<img style="float: right;" src='images/c.png'></p>
+                                        <p class="lead">Convenience<img style="float: right;" src='images/c.png'></p>
                                     </div>
                                     <div>
                                         <div>
-                                            <p class="">Fast Food<img style="float: right;" src='images/f.png'></p>
+                                            <p class="lead">Fast Food<img style="float: right;" src='images/f.png'></p>
                                         </div>
                                     </div>
                                     <div>
                                         <div>
-                                            <p class="">Limited Service<img style="float: right;" src='images/l.png'></p>
+                                            <p class="lead">Limited Service<img style="float: right;" src='images/l.png'></p>
                                         </div>
                                     </div>
                                     <div>
                                         <div>
-                                            <p class="">Grocery Store<img style="float: right;" src='images/g.png'></p>
+                                            <p class="lead">Grocery Store<img style="float: right;" src='images/g.png'></p>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
                             <div class="sidebar-pane" id="healthy">
                                 <h1 class="sidebar-header">Locate Nearest Healthy Option<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-                                <button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class=''>
+                                <button type='button' id='healthy' onclick="alert('This button will show you the location of the nearest source of healthy food!')" class='btn btn-primary mt-2'>
                 <div>Locate Nearest Healthy Option </div>
             </button>
                             </div>
