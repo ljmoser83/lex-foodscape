@@ -16,13 +16,23 @@
     new L.Control.Zoom({
         position: 'topright'
     }).addTo(mymap);
-    var sidebar = L.control.sidebar('sidebar').addTo(mymap);
 
+    var sidebar = L.control.sidebar('sidebar');
+    sidebar.onAdd = function (mymap) {
+        var sb = L.DomUtil.get('sidebar');
+        L.DomEvent.disableScrollPropogation('sb');
+        L.DomEvent.disableClickPropogation('sb');
+        return sb;
+    }
+    sidebar.addTo(mymap);
+    
     $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip({ container: 'body' });
+        $('[data-toggle="tooltip"]').tooltip({
+            container: 'body'
+        });
 
     });
-   
+
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function (lf) {
 
         var food = L.markerClusterGroup();
