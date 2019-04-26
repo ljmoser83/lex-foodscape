@@ -17,7 +17,9 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Leaflet and Leaflet.markercluster CSS-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.Default.css">
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.css">
     <!-- Custom styles for this template -->
@@ -38,6 +40,7 @@
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -162,7 +165,7 @@
                             </p>
 
                             <div class="ratio">
-                                <p style="font-weight:bold; text-align: center;">---</p>
+                                <p style="font-weight:bold; text-align: center;" id='demo'>---</p>
                             </div>
                         </div>
                     </div>
@@ -225,7 +228,9 @@
     </script>
 
     <!--Leaflet and markercluster JS -->
-    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
     <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
 
     <!-- Plugin easing JavaScript -->
