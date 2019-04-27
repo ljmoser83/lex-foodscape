@@ -30,32 +30,38 @@
     }
     sidebar.addTo(mymap);
 
-    var x = document.getElementById("demo");
+    //    var x = document.getElementById("demo");
+    //
+    //    function getLocation() {
+    //        if (navigator.geolocation) {
+    //            navigator.geolocation.getCurrentPosition(showPosition);
+    //        } else {
+    //            x.innerHTML = "Geolocation is not supported by this browser.";
+    //        }
+    //    }
+    //
+    //    function showPosition(position) {
+    //        x.innerHTML = "Latitude: " + position.coords.latitude +
+    //            "<br>Longitude: " + position.coords.longitude;
+    //    }
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-    }
-
-    var loc = getLocation();
+    //    var loc = getLocation();
     geo = navigator.geolocation
-    geo.getCurrentPosition(function (position) {
-        console.log(position.coords.latitude, position.coords.longitude);
-    });
+    //    geo.getCurrentPosition(function (position) {
+    //        console.log(position.coords.latitude, position.coords.longitude);
+    //    });
 
     function drop(position) {
         L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
             .openPopup();
     }
-    geo.getCurrentPosition(drop);
+
+    function mark() {
+        geo.getCurrentPosition(drop);
+    }
+
+    $("#locate").on("click", mark);
+
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function (lf) {
 
         var food = L.markerClusterGroup();
