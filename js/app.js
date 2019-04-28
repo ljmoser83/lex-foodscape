@@ -14,9 +14,9 @@
         accessToken: 'pk.eyJ1IjoibGptb3NlcjgzIiwiYSI6ImNqMG5sNmI1bjAwY3UzM3Q4cXNncGl6NDMifQ.jAX66dC8oy8Mh4IvgF5SPg'
     }).addTo(mymap);
 
-//    L.marker([38.03962, -84.496257]).addTo(mymap)
-//        .bindPopup('lex-foodscape is under construction.')
-//        .openPopup();
+    //    L.marker([38.03962, -84.496257]).addTo(mymap)
+    //        .bindPopup('lex-foodscape is under construction.')
+    //        .openPopup();
     new L.Control.Zoom({
         position: 'topright'
     }).addTo(mymap);
@@ -30,37 +30,55 @@
     }
     sidebar.addTo(mymap);
 
-    //    var x = document.getElementById("demo");
-    //
-    //    function getLocation() {
-    //        if (navigator.geolocation) {
-    //            navigator.geolocation.getCurrentPosition(showPosition);
-    //        } else {
-    //            x.innerHTML = "Geolocation is not supported by this browser.";
-    //        }
-    //    }
-    //
-    //    function showPosition(position) {
-    //        x.innerHTML = "Latitude: " + position.coords.latitude +
-    //            "<br>Longitude: " + position.coords.longitude;
-    //    }
+    var x = document.getElementById("fcr");
 
-    //    var loc = getLocation();
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = "Button" + "<br>Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+    }
+
     geo = navigator.geolocation
-    //    geo.getCurrentPosition(function (position) {
-    //        console.log(position.coords.latitude, position.coords.longitude);
-    //    });
+
+    var location = {};
+
+    mymap.on('click', function (e) {
+        lat = e.latlng.lat;
+        lon = e.latlng.lng;
+
+        if (location != undefined) {
+            mymap.removeLayer(location);
+        };
+        mymap.setView([lat, lon], 15);
+        //Add a marker to show where you clicked.
+        location = L.marker([lat, lon]).addTo(mymap).bindPopup('This is your clicked location of interest.')
+            .openPopup();
+        x.innerHTML = "Click" + "<br>Latitude: " + lat +
+            "<br>Longitude: " + lon;
+    });
+
 
     function drop(position) {
-        mymap.setView([position.coords.latitude, position.coords.longitude], 16);
-        L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
+        mymap.setView([position.coords.latitude, position.coords.longitude], 15);
+        if (location != undefined) {
+            mymap.removeLayer(location);
+        };
+        location = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
             .openPopup();
-        
+        getLocation();
     }
 
     function mark() {
         geo.getCurrentPosition(drop);
     }
+
 
     $("#locate").on("click", mark);
 
