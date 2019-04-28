@@ -59,7 +59,7 @@
                 <div class="col-lg-12 mx-auto height">
                     <p class="lead text-justify">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the <a href='https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754' target='_blank'>foodscape</a> concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions.
                     </p>
-                    <p class="lead text-justify">Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).
+                    <p class="lead text-justify">Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment and a healthy diet. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).
                     </p>
                 </div>
             </div>
@@ -94,8 +94,16 @@
                             Tutorial
                             <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                         </h1>
-                        <p class="text-justify mt-2">The user interactions will focus on identifying the user's exposure to potentially healthy and unhealthy food choices in their foodscape. Users will be able to utilize an address geocoder that will place a point of interest on the map and analyze the food environment in a set radius around that point. Alternative methods for adding this point to the map will include a tap/click on a location of interest on the map or by using the "locate me" button next to the geocoder that will utilize location services of the user's device to drop a location on the map. The location of interest will be buffered with a radius that is determined from the radio selector in the bottom left corner of the web map. This will serve as a representation of the user's foodscape based on a 0.25, 0.5, and 1.0 mile radius from their location of interest. These distances should serve as a suitable means of identifying exposure to the foodscape in the user's geographic location.
+                        <p class="text-justify mt-2">Enter the "Map Tools" tab and add a location of interest by one of three methods:</p>
+                        <ol>
+                            <li>Enter an address to be geocoded</li>
+                            <li>Click the "Use Current Location" button</li>
+                            <li>Click on a point of interest on the map</li>
+                        </ol>
+                        <p class="text-justify mt-2">The location of interest will be buffered by the user determined normal mobility radius. This area of interest will represent the user's foodscape.
                         </p>
+                        <p class="text-justify mt-2">An unhealthy/healthy food choice ratio will be calculated for the area of interest. This ratio will indicate the relative exposure of consumers to healthy and unhealthy food choices within the area of interest. An area with high exposure to unhealthy food options is any area with a ratio greater than 4:1.</p>
+                        <p class="text-justify mt-2">The "Locate Nearest Healthy Food Option" tab and associated button can be used to determine the location of the nearest healthy food option to the location of interest.</p>
                     </div>
                     <div class="sidebar-pane" id="tools">
                         <h1 class="sidebar-header">Map Tools<span class="sidebar-close"><i
@@ -114,7 +122,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="custom-control custom-radio col-sm">
-                                        <input type="radio" id="customRadio1" name="dist" value="0.25" checked class="custom-control-input" onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
+                                        <input type="radio" id="customRadio1" name="dist" value="0.25" class="custom-control-input" onclick="alert('This button will set the radius of the area of interest to 0.25 miles!')">
                                         <label class="custom-control-label" for="customRadio1">0.25</label>
                                     </div>
                                     <div class="custom-control custom-radio col-sm">
@@ -122,14 +130,14 @@
                                         <label class="custom-control-label" for="customRadio2">0.5</label>
                                     </div>
                                     <div class="custom-control custom-radio col-sm">
-                                        <input type="radio" id="customRadio3" name="dist" value="1.0" class="custom-control-input" onclick="alert('This button will set the radius of the area of nterest to 1.0 miles!')">
+                                        <input type="radio" id="customRadio3" name="dist" value="1.0" checked class="custom-control-input" onclick="alert('This button will set the radius of the area of nterest to 1.0 miles!')">
                                         <label class="custom-control-label" for="customRadio3">1.0</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id='ratio' class="border mt-2">
-                            <p style="text-align: center;" class="lead">Healthy/Unhealthy <br> Food Choice Ratio
+                            <p style="text-align: center;" class="lead">Unhealthy/Healthy <br> Food Choice Ratio
                             </p>
 
                             <div class="ratio">
