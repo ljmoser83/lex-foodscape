@@ -14,9 +14,9 @@
         accessToken: 'pk.eyJ1IjoibGptb3NlcjgzIiwiYSI6ImNqMG5sNmI1bjAwY3UzM3Q4cXNncGl6NDMifQ.jAX66dC8oy8Mh4IvgF5SPg'
     }).addTo(mymap);
 
-    L.marker([38.03962, -84.496257]).addTo(mymap)
-        .bindPopup('lex-foodscape is under construction.')
-        .openPopup();
+//    L.marker([38.03962, -84.496257]).addTo(mymap)
+//        .bindPopup('lex-foodscape is under construction.')
+//        .openPopup();
     new L.Control.Zoom({
         position: 'topright'
     }).addTo(mymap);
@@ -52,8 +52,10 @@
     //    });
 
     function drop(position) {
+        mymap.setView([position.coords.latitude, position.coords.longitude], 16);
         L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
             .openPopup();
+        
     }
 
     function mark() {
