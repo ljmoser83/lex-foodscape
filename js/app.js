@@ -14,9 +14,6 @@
         accessToken: 'pk.eyJ1IjoibGptb3NlcjgzIiwiYSI6ImNqMG5sNmI1bjAwY3UzM3Q4cXNncGl6NDMifQ.jAX66dC8oy8Mh4IvgF5SPg'
     }).addTo(mymap);
 
-    //    L.marker([38.03962, -84.496257]).addTo(mymap)
-    //        .bindPopup('lex-foodscape is under construction.')
-    //        .openPopup();
     new L.Control.Zoom({
         position: 'topright'
     }).addTo(mymap);
@@ -48,11 +45,14 @@
     geo = navigator.geolocation
 
     var location = {};
-
+    var ll = [];
     mymap.on('click', function (e) {
         lat = e.latlng.lat;
         lon = e.latlng.lng;
-
+        ll = [
+                    lat,
+                    lon
+                ];
         if (location != undefined) {
             mymap.removeLayer(location);
         };
@@ -70,6 +70,7 @@
         if (location != undefined) {
             mymap.removeLayer(location);
         };
+        ll = [position.coords.latitude, position.coords.longitude];
         location = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
             .openPopup();
         getLocation();
@@ -78,10 +79,19 @@
     function mark() {
         geo.getCurrentPosition(drop);
     }
-
-
+    var distance = null;
+    var circle = {};
+    $("input[name='dist']").click(function () {
+        distance = parseInt(this.value);
+        console.log(distance);
+        if (ll != undefined) {
+            mymap.removeLayer(circle);
+            circle = L.circle(ll, {
+                radius: (distance)
+            }).addTo(mymap);
+        }
+    });
     $("#locate").on("click", mark);
-
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function (lf) {
 
         var food = L.markerClusterGroup();
