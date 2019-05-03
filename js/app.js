@@ -46,6 +46,9 @@
 
     var location = {};
     var ll = [];
+    var distance = null;
+    var circle = {};
+
     mymap.on('click', function (e) {
         lat = e.latlng.lat;
         lon = e.latlng.lng;
@@ -55,6 +58,9 @@
                 ];
         if (location != undefined) {
             mymap.removeLayer(location);
+        };
+        if (ll != undefined) {
+            mymap.removeLayer(circle);
         };
         mymap.setView([lat, lon], 15);
         //Add a marker to show where you clicked.
@@ -70,6 +76,9 @@
         if (location != undefined) {
             mymap.removeLayer(location);
         };
+        if (ll != undefined) {
+            mymap.removeLayer(circle);
+        };
         ll = [position.coords.latitude, position.coords.longitude];
         location = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
             .openPopup();
@@ -79,8 +88,9 @@
     function mark() {
         geo.getCurrentPosition(drop);
     }
-    var distance = null;
-    var circle = {};
+
+
+
     $("input[name='dist']").click(function () {
         distance = parseInt(this.value);
         console.log(distance);
@@ -91,7 +101,12 @@
             }).addTo(mymap);
         }
     });
+
+
     $("#locate").on("click", mark);
+
+
+
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function (lf) {
 
         var food = L.markerClusterGroup();
@@ -138,7 +153,8 @@
         // add the markerClusterGroup to the map
         mymap.addLayer(food);
 
-
+        //
+        //                $("#healthy").on("click", fresh);
 
     });
 
