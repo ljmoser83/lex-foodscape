@@ -135,21 +135,26 @@
 
             return icon;
         }
+        function gFilter (feature){
+            if (feature.properties.RFEI_cat == "G") return true
+        }
+        var lex = L.geoJSON(lf, {filter: gFilter});
+        console.log(lex._layers);
+        
+            // loop through all our features
+            lf.features.forEach(function (feature) {
+                // create a new Leaflet marker for each
+                var coords = feature.geometry.coordinates;
+                cat = feature.properties.RFEI_cat;
+                marker = L.marker([coords[1], coords[0]], {
+                    icon: color(feature)
+                });
+                // bind a tooltip to the marker
+                marker.bindTooltip("Name: " + feature.properties.Name);
+                // add the marker to the markerClusterGroup
+                food.addLayer(marker);
 
-        // loop through all our signals features
-        lf.features.forEach(function (feature) {
-            // create a new Leaflet marker for each
-            var coords = feature.geometry.coordinates;
-            cat = feature.properties.RFEI_cat;
-            marker = L.marker([coords[1], coords[0]], {
-                icon: color(feature)
             });
-            // bind a tooltip to the marker
-            marker.bindTooltip("Name: " + feature.properties.Name);
-            // add the marker to the markerClusterGroup
-            food.addLayer(marker);
-
-        });
         // add the markerClusterGroup to the map
         mymap.addLayer(food);
 
