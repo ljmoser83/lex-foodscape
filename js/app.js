@@ -93,7 +93,7 @@
 
     $("input[name='dist']").click(function () {
         distance = parseInt(this.value);
-        console.log(distance);
+
         if (ll != undefined) {
             mymap.removeLayer(circle);
             circle = L.circle(ll, {
@@ -102,8 +102,47 @@
         }
     });
 
+    var text = $("#text").val();
 
     $("#locate").on("click", mark);
+    // Instantiate a platform object:
+    var platform = new H.service.Platform({
+        'app_id': 'S9VBfXc4kP9esjYB6kHN',
+        'app_code': '9s3PVp7_J1xBkXxEzuX7vQ'
+    });
+
+    // Create the parameters for the geocoding request:
+    var geocodingParams = {
+        searchText: '214 East Main Street, Lexingotn, KY'
+    };
+
+    // Get an instance of the geocoding service:
+    var geocoder = platform.getGeocodingService();
+
+    //define the onResult function that will do something with geocoded data
+    var onResult = function (result) {
+
+            if (location != undefined) {
+                mymap.removeLayer(location);
+            };
+            if (ll != undefined) {
+                mymap.removeLayer(circle);
+            };
+            ll = [result.Response.View[0].Result[0].Location.DisplayPosition.Latitude, result.Response.View[0].Result[0].Location.DisplayPosition.Longitude];
+            location = L.marker(ll).addTo(mymap).bindPopup('This is your geocoded location, the Kentucky Theater!')
+                .openPopup();
+        },
+        onError = function (error) {
+            console.log(error);
+        };
+
+
+    function button() {
+        text = $("#text").val();
+        geocoder.geocode(geocodingParams, onResult, onError);
+    }
+
+    $("#button").on("click", button);
 
 
 
@@ -135,26 +174,29 @@
 
             return icon;
         }
-        function gFilter (feature){
+
+        function gFilter(feature) {
             if (feature.properties.RFEI_cat == "G") return true
         }
-        var lex = L.geoJSON(lf, {filter: gFilter});
-        console.log(lex._layers);
-        
-            // loop through all our features
-            lf.features.forEach(function (feature) {
-                // create a new Leaflet marker for each
-                var coords = feature.geometry.coordinates;
-                cat = feature.properties.RFEI_cat;
-                marker = L.marker([coords[1], coords[0]], {
-                    icon: color(feature)
-                });
-                // bind a tooltip to the marker
-                marker.bindTooltip("Name: " + feature.properties.Name);
-                // add the marker to the markerClusterGroup
-                food.addLayer(marker);
+        var lex = L.geoJSON(lf, {
+            filter: gFilter
+        });
+        //        console.log(lex._layers);
 
+        // loop through all our features
+        lf.features.forEach(function (feature) {
+            // create a new Leaflet marker for each
+            var coords = feature.geometry.coordinates;
+            cat = feature.properties.RFEI_cat;
+            marker = L.marker([coords[1], coords[0]], {
+                icon: color(feature)
             });
+            // bind a tooltip to the marker
+            marker.bindTooltip("Name: " + feature.properties.Name);
+            // add the marker to the markerClusterGroup
+            food.addLayer(marker);
+
+        });
         // add the markerClusterGroup to the map
         mymap.addLayer(food);
 

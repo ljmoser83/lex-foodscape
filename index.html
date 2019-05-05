@@ -109,9 +109,9 @@
                         <h1 class="sidebar-header">Map Tools<span class="sidebar-close"><i
                                     class="fa fa-caret-left"></i></span></h1>
                         <div id="geocode" class="input-group mt-2">
-                            <input type="text" class="form-control" placeholder="Enter Address of Interest">
+                            <input id='text' type="text" class="form-control" placeholder="Enter Address of Interest">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button" id="button-addon2" onclick="alert('This button will set typed location as the point of interest to be buffered and analyzed!')">Search</button>
+                                <button id= "button" class="btn btn-primary" type="button" id="button-addon2">Search</button>
                             </div>
                         </div>
                         <button type='button' id='locate' class='btn btn-primary mt-2'>
@@ -226,6 +226,10 @@
 
     <!-- leaflet-sidebar js control extnesion-->
     <script src="js/leaflet-sidebar.min.js"></script>
+
+    <!-- Here API -->
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
 
     <!--custom js written for map interactivity-->
     <script src='js/app.js'></script>
