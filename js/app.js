@@ -103,7 +103,7 @@
     });
 
     var text = $("#text").val();
-
+    console.log(text);
     $("#locate").on("click", mark);
     // Instantiate a platform object:
     var platform = new H.service.Platform({
@@ -113,7 +113,7 @@
 
     // Create the parameters for the geocoding request:
     var geocodingParams = {
-        searchText: '214 East Main Street, Lexingotn, KY'
+        searchText: '214 East Main Street, Lexington, KY'
     };
 
     // Get an instance of the geocoding service:
@@ -128,18 +128,26 @@
             if (ll != undefined) {
                 mymap.removeLayer(circle);
             };
-            ll = [result.Response.View[0].Result[0].Location.DisplayPosition.Latitude, result.Response.View[0].Result[0].Location.DisplayPosition.Longitude];
-            location = L.marker(ll).addTo(mymap).bindPopup('This is your geocoded location, the Kentucky Theater!')
-                .openPopup();
+            if (text == '') {
+                alert("Enter an address to be geocoded.");
+
+            } else {
+                ll = [result.Response.View[0].Result[0].Location.DisplayPosition.Latitude, result.Response.View[0].Result[0].Location.DisplayPosition.Longitude];
+                location = L.marker(ll).addTo(mymap).bindPopup('This is your geocoded location!')
+                    .openPopup();
+            }
         },
         onError = function (error) {
             console.log(error);
+
         };
 
 
     function button() {
         text = $("#text").val();
-        geocoder.geocode(geocodingParams, onResult, onError);
+        geocoder.geocode({
+            searchText: text
+        }, onResult, onError);
     }
 
     $("#button").on("click", button);
@@ -178,10 +186,10 @@
         function gFilter(feature) {
             if (feature.properties.RFEI_cat == "G") return true
         }
-        var lex = L.geoJSON(lf, {
+        var ff = L.geoJSON(lf, {
             filter: gFilter
         });
-        //        console.log(lex._layers);
+        console.log(ff._layers);
 
         // loop through all our features
         lf.features.forEach(function (feature) {
