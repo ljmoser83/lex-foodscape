@@ -103,7 +103,7 @@
     });
 
     var text = $("#text").val();
-    console.log(text);
+    //    console.log(text);
     $("#locate").on("click", mark);
     // Instantiate a platform object:
     var platform = new H.service.Platform({
@@ -189,7 +189,7 @@
         var ff = L.geoJSON(lf, {
             filter: gFilter
         });
-        console.log(ff._layers);
+        //        console.log(ff._layers);
 
         // loop through all our features
         lf.features.forEach(function (feature) {
