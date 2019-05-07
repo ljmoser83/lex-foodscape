@@ -27,7 +27,7 @@
     }
     sidebar.addTo(mymap);
 
-
+    var x = document.getElementById("fcr");
 
     //    function getLocation() {
     //        if (navigator.geolocation) {
@@ -50,6 +50,7 @@
     var circle = {};
 
     mymap.on('click', function (e) {
+        x.innerHTML = '---'
         lat = e.latlng.lat;
         lon = e.latlng.lng;
         ll = [
@@ -72,6 +73,7 @@
 
     function drop(position) {
         mymap.setView([position.coords.latitude, position.coords.longitude], 15);
+        x.innerHTML = '---'
         if (location != undefined) {
             mymap.removeLayer(location);
         };
@@ -109,7 +111,7 @@
 
     //define the onResult function that will do something with geocoded data
     var onResult = function (result) {
-
+            x.innerHTML = '---'
             if (location != undefined) {
                 mymap.removeLayer(location);
             };
@@ -209,7 +211,9 @@
             }
         }
         $("#healthy").on("click", fresh);
-        var x = document.getElementById("fcr");
+
+        var num = 0;
+        var den = 0;
         $("input[name='dist']").click(function () {
             distance = parseInt(this.value);
 
@@ -219,14 +223,21 @@
                     radius: (distance)
                 }).addTo(mymap);
                 var within = leafletKnn(allFood).nearest(L.latLng(ll), 500, distance);
-                console.log(within);
+
+                num = 0;
+                den = 0;
                 if (within != '') {
 
-                    //                for (var i = 0; i < within.length; i++) {
-                    //                    within[i].layer.feature.properties.RFEI_cat
-                    //                }
-                    x.innerHTML = within[0].layer.feature.properties.RFEI_cat
-                }
+                    for (var i = 0; i < within.length; i++) {
+                        if (within[i].layer.feature.properties.RFEI_cat == "C") num += 1;
+                        else if (within[i].layer.feature.properties.RFEI_cat == "F") num += 1;
+                        else if (within[i].layer.feature.properties.RFEI_cat == "L") num += 1;
+                        else den += 1;
+                    }
+
+                    if (den == 0) x.innerHTML = "No fresh food locations in this area of interest!";
+                    else x.innerHTML = (num / den).toFixed(2) + ":1";
+                } else if (within == '') x.innerHTML = "No food locations in this area of interest!";
             }
         });
 
