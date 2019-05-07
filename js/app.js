@@ -88,16 +88,7 @@
         geo.getCurrentPosition(drop);
     }
 
-    $("input[name='dist']").click(function () {
-        distance = parseInt(this.value);
 
-        if (ll != undefined) {
-            mymap.removeLayer(circle);
-            circle = L.circle(ll, {
-                radius: (distance)
-            }).addTo(mymap);
-        }
-    });
 
     var text = $("#text").val();
     //    console.log(text);
@@ -202,7 +193,7 @@
         });
         // add the markerClusterGroup to the map
         mymap.addLayer(food);
-
+        var allFood = L.geoJSON(lf);
 
         function fresh(nearestGroc) {
             if (ll == '') {
@@ -218,6 +209,23 @@
             }
         }
         $("#healthy").on("click", fresh);
+
+        $("input[name='dist']").click(function () {
+            distance = parseInt(this.value);
+
+            if (ll != undefined) {
+                mymap.removeLayer(circle);
+                circle = L.circle(ll, {
+                    radius: (distance)
+                }).addTo(mymap);
+                var within = leafletKnn(allFood).nearest(L.latLng(ll), 500, distance);
+                console.log(within);
+                //                for (var i = 0; i < within.length; i++) {
+                //                    within[i].layer.feature.properties.RFEI_cat
+                //                }
+
+            }
+        });
 
     });
 })()
