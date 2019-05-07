@@ -27,7 +27,7 @@
     }
     sidebar.addTo(mymap);
 
-    var x = document.getElementById("fcr");
+
 
     //    function getLocation() {
     //        if (navigator.geolocation) {
@@ -209,7 +209,7 @@
             }
         }
         $("#healthy").on("click", fresh);
-
+        var x = document.getElementById("fcr");
         $("input[name='dist']").click(function () {
             distance = parseInt(this.value);
 
@@ -220,10 +220,13 @@
                 }).addTo(mymap);
                 var within = leafletKnn(allFood).nearest(L.latLng(ll), 500, distance);
                 console.log(within);
-                //                for (var i = 0; i < within.length; i++) {
-                //                    within[i].layer.feature.properties.RFEI_cat
-                //                }
+                if (within != '') {
 
+                    //                for (var i = 0; i < within.length; i++) {
+                    //                    within[i].layer.feature.properties.RFEI_cat
+                    //                }
+                    x.innerHTML = within[0].layer.feature.properties.RFEI_cat
+                }
             }
         });
 
