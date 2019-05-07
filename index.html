@@ -73,18 +73,16 @@
                 <!-- Nav tabs -->
                 <div class="sidebar-tabs">
                     <ul role="tablist">
-                        <li><a href="#tutorial" role="tab"><i class="fas fa-info-circle" data-toggle="tooltip"
-                                    title="Tutorial"></i></a></li>
-                        <li><a href="#tools" role="tab"><i class="fas fa-hammer" data-toggle="tooltip"
-                                    title="Map Tools"></i></a></li>
+                        <li><a href="#tutorial" role="tab"><i class="fas fa-info-circle" data-toggle="tooltip" title="Tutorial"></i></a></li>
+                        <li><a href="#tools" role="tab"><i class="fas fa-hammer" data-toggle="tooltip" title="Map Tools"></i></a></li>
+                        <!--
                         <li><a href="#healthy" role="tab"><i class="fas fa-apple-alt" data-toggle="tooltip"
                                     title="Locate Nearest Healthy Food Option"></i></a></li>
-                        <li><a href="#legends" role="tab"><i class="fas fa-map-signs" data-toggle="tooltip"
-                                    title="Legend"></i></a></li>
+-->
+                        <li><a href="#legends" role="tab"><i class="fas fa-map-signs" data-toggle="tooltip" title="Legend"></i></a></li>
                     </ul>
                     <ul role="tablist">
-                        <li><a href="#references" role="tab"><i class="fas fa-book" data-toggle="tooltip"
-                                    title="References"></i></a></li>
+                        <li><a href="#references" role="tab"><i class="fas fa-book" data-toggle="tooltip" title="References"></i></a></li>
                     </ul>
                 </div>
                 <!-- Tab panes -->
@@ -103,11 +101,10 @@
                         <p class="text-justify mt-2">The location of interest will be buffered by the user determined normal mobility radius. This area of interest will represent the user's foodscape.
                         </p>
                         <p class="text-justify mt-2">An unhealthy/healthy food choice ratio will be calculated for the area of interest. This ratio will indicate the relative exposure of consumers to healthy and unhealthy food choices within the area of interest. An area with high exposure to unhealthy food options is any area with a ratio greater than 4:1.</p>
-                        <p class="text-justify mt-2">The "Locate Nearest Healthy Food Option" tab and associated button can be used to determine the location of the nearest healthy food option to the location of interest.</p>
+                        <p class="text-justify mt-2">The "Locate Nearest Healthy Food Option" button can be used to determine the location of the nearest healthy food option to the location of interest.</p>
                     </div>
                     <div class="sidebar-pane" id="tools">
-                        <h1 class="sidebar-header">Map Tools<span class="sidebar-close"><i
-                                    class="fa fa-caret-left"></i></span></h1>
+                        <h1 class="sidebar-header">Map Tools<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
                         <div id="geocode" class="input-group mt-2">
                             <input id='text' type="text" class="form-control" placeholder="Enter Address of Interest">
                             <div class="input-group-append">
@@ -144,10 +141,13 @@
                                 <p style="font-weight:bold; text-align: center;" id='fcr'>---</p>
                             </div>
                         </div>
+                        <button type='button' id='healthy' class='btn btn-primary mt-2'>
+                            <div>Locate Nearest Healthy Option </div>
+                        </button>
+
                     </div>
                     <div class="sidebar-pane" id="legends">
-                        <h1 class="sidebar-header">Legend<span class="sidebar-close"><i
-                                    class="fa fa-caret-left"></i></span></h1>
+                        <h1 class="sidebar-header">Legend<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
                         <div id="legend" class="mt-2 border p-2">
                             <div>
                                 <p class="lead">Convenience Store<img style="float: right;" src='images/c.png'></p>
@@ -170,6 +170,7 @@
                             </div>
                         </div>
                     </div>
+                    <!--
                     <div class="sidebar-pane" id="healthy">
                         <h1 class="sidebar-header">Locate Nearest Healthy Option<span class="sidebar-close"><i
                                     class="fa fa-caret-left"></i></span></h1>
@@ -177,6 +178,7 @@
                             <div>Locate Nearest Healthy Option </div>
                         </button>
                     </div>
+-->
                     <div class="sidebar-pane" id="references">
                         <h1 class="sidebar-header">
                             References
@@ -206,7 +208,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
+    <!-- JQuery, Popper, and Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
@@ -214,7 +216,6 @@
     </script>
 
     <!--Leaflet and markercluster JS -->
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
     <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
 
@@ -224,17 +225,17 @@
     <!-- Custom JavaScript for this theme -->
     <script src="js/scrolling-nav.js"></script>
 
-    <!-- leaflet-sidebar js control extnesion-->
+    <!-- leaflet-sidebar js control extension-->
     <script src="js/leaflet-sidebar.min.js"></script>
 
     <!-- Here API -->
     <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
 
-    <!-- Leaflet-knn -->
+    <!-- Leaflet-knn for location analytics-->
     <script src='js/leaflet-knn.min.js'></script>
 
-    <!--custom js written for map interactivity-->
+    <!--Custom JavaScript -->
     <script src='js/app.js'></script>
 
 </body>

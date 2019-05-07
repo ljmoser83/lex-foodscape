@@ -29,18 +29,18 @@
 
     var x = document.getElementById("fcr");
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-
-    function showPosition(position) {
-        x.innerHTML = "Button" + "<br>Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-    }
+    //    function getLocation() {
+    //        if (navigator.geolocation) {
+    //            navigator.geolocation.getCurrentPosition(showPosition);
+    //        } else {
+    //            x.innerHTML = "Geolocation is not supported by this browser.";
+    //        }
+    //    }
+    //
+    //    function showPosition(position) {
+    //        x.innerHTML = "Button" + "<br>Latitude: " + position.coords.latitude +
+    //            "<br>Longitude: " + position.coords.longitude;
+    //    }
 
     geo = navigator.geolocation
 
@@ -66,10 +66,9 @@
         //Add a marker to show where you clicked.
         location = L.marker([lat, lon]).addTo(mymap).bindPopup('This is your clicked location of interest.')
             .openPopup();
-        x.innerHTML = "Click" + "<br>Latitude: " + lat +
-            "<br>Longitude: " + lon;
+        //        x.innerHTML = "Click" + "<br>Latitude: " + lat +
+        //            "<br>Longitude: " + lon;
     });
-
 
     function drop(position) {
         mymap.setView([position.coords.latitude, position.coords.longitude], 15);
@@ -82,14 +81,12 @@
         ll = [position.coords.latitude, position.coords.longitude];
         location = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
             .openPopup();
-        getLocation();
+        //        getLocation();
     }
 
     function mark() {
         geo.getCurrentPosition(drop);
     }
-
-
 
     $("input[name='dist']").click(function () {
         distance = parseInt(this.value);
@@ -143,7 +140,6 @@
 
         };
 
-
     function button() {
         text = $("#text").val();
         geocoder.geocode({
@@ -152,8 +148,6 @@
     }
 
     $("#button").on("click", button);
-
-
 
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function (lf) {
 
@@ -226,7 +220,4 @@
         $("#healthy").on("click", fresh);
 
     });
-
-
-
 })()
