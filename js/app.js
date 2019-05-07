@@ -1,23 +1,23 @@
 (function () {
-
+    // JQuery call to display tooltips within the body container
     $('[data-toggle="tooltip"]').tooltip({
         container: 'body'
     });
-
+// Creates a leaflet map within the #map div and assigns to variable mymap
     var mymap = L.map('map', {
         zoomControl: false
     }).setView([38.03962, -84.496257], 12);
-
+// Adds a tilelayer to the map using mapbox API key for tile access
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         maxZoom: 18,
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoibGptb3NlcjgzIiwiYSI6ImNqMG5sNmI1bjAwY3UzM3Q4cXNncGl6NDMifQ.jAX66dC8oy8Mh4IvgF5SPg'
     }).addTo(mymap);
-
+// Adds a leaflet zoom control in the topright corner of the #map div
     new L.Control.Zoom({
         position: 'topright'
     }).addTo(mymap);
-
+// Adds a leaflet sidebar control along left side of #map div to add buttons for various content and functionality 
     var sidebar = L.control.sidebar('sidebar');
     sidebar.onAdd = function (mymap) {
         var sb = L.DomUtil.get('sidebar');
@@ -26,29 +26,16 @@
         return sb;
     }
     sidebar.addTo(mymap);
-
+// Declares a shortcut variable to update the inner html of the #fcr div
     var x = document.getElementById("fcr");
-
-    //    function getLocation() {
-    //        if (navigator.geolocation) {
-    //            navigator.geolocation.getCurrentPosition(showPosition);
-    //        } else {
-    //            x.innerHTML = "Geolocation is not supported by this browser.";
-    //        }
-    //    }
-    //
-    //    function showPosition(position) {
-    //        x.innerHTML = "Button" + "<br>Latitude: " + position.coords.latitude +
-    //            "<br>Longitude: " + position.coords.longitude;
-    //    }
-
+// Declares a shortcut variable for the navigator.geolocation method that will be reused several times
     var geo = navigator.geolocation;
-
+// Declares several global variables for use throughout code
     var location = {};
     var ll = [];
     var distance = null;
     var circle = {};
-
+// Adds a click event listener to mymap that will add a marker to the map and assign the coordinates of the click event to the global variable ll
     mymap.on('click', function (e) {
         x.innerHTML = '---'
         lat = e.latlng.lat;
@@ -67,10 +54,8 @@
         //Add a marker to show where you clicked.
         location = L.marker([lat, lon]).addTo(mymap).bindPopup('This is your clicked location of interest.')
             .openPopup();
-        //        x.innerHTML = "Click" + "<br>Latitude: " + lat +
-        //            "<br>Longitude: " + lon;
     });
-
+// Declares a function that will utilize the location services of the user's device and pass their location information to the function to add a marker to the map and assign coordinates to the global variable ll
     function drop(position) {
         mymap.setView([position.coords.latitude, position.coords.longitude], 15);
         x.innerHTML = '---'
@@ -83,17 +68,14 @@
         ll = [position.coords.latitude, position.coords.longitude];
         location = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
             .openPopup();
-        //        getLocation();
     }
-
+// Declares a function that will invoke the location services and pass that data to the drop function
     function mark() {
         geo.getCurrentPosition(drop);
     }
-
-
-
+// declares a global referencce to the JQuery method that will obtain the user entered text value in #text div
     var text = $("#text").val();
-    //    console.log(text);
+ 
     $("#locate").on("click", mark);
     // Instantiate a platform object:
     var platform = new H.service.Platform({
