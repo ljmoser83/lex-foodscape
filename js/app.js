@@ -42,7 +42,7 @@
     //            "<br>Longitude: " + position.coords.longitude;
     //    }
 
-    geo = navigator.geolocation
+    var geo = navigator.geolocation;
 
     var location = {};
     var ll = [];
