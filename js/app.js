@@ -135,6 +135,7 @@
                 ll = [result.Response.View[0].Result[0].Location.DisplayPosition.Latitude, result.Response.View[0].Result[0].Location.DisplayPosition.Longitude];
                 location = L.marker(ll).addTo(mymap).bindPopup('This is your geocoded location!')
                     .openPopup();
+                mymap.flyTo(ll, 16);
             }
         },
         onError = function (error) {
@@ -208,8 +209,21 @@
         // add the markerClusterGroup to the map
         mymap.addLayer(food);
 
-        //
-        //                $("#healthy").on("click", fresh);
+
+        function fresh(nearestGroc) {
+            if (ll == '') {
+                alert("Set a location of interest.");
+            } else {
+
+                var nearest = leafletKnn(ff).nearest(L.latLng(ll), 1);
+                console.log(nearest);
+                var nearestGroc = [nearest[0].lat, nearest[0].lon];
+
+                mymap.flyTo(nearestGroc, 18);
+
+            }
+        }
+        $("#healthy").on("click", fresh);
 
     });
 
