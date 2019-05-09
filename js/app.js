@@ -214,6 +214,7 @@
                     radius: (distance)
                 }).addTo(mymap);
                 var within = leafletKnn(allFood).nearest(L.latLng(ll), 500, distance);
+                console.log(within);
                 // Additional logic to reset num and den each time the function is called and defines the logic for the calculation of the ratio. Also proceeds through the logicc depending on set criteria and provides messages to the user based on defined criteria //
                 num = 0;
                 den = 0;

@@ -253,10 +253,10 @@
             _defaultIconCreateFunction: function (e) {
                 var t = e.getChildCount(),
                     i = " marker-cluster-";
-                return i += 10 > t ? "small" : 100 > t ? "medium" : "large", new L.DivIcon({
+                return i += 15 > t ? "small" : 35 > t ? "medium" : "large", new L.DivIcon({
                     html: "<div><span>" + t + "</span></div>",
                     className: "marker-cluster" + i,
-                    iconSize: new L.Point(40, 40)
+                    iconSize: new L.Point(40,40)
                 })
             },
             _bindEvents: function () {
