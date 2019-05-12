@@ -59,7 +59,7 @@
         //Add a marker to show where you clicked.
         location = L.marker([lat, lon]).addTo(mymap).bindPopup('This is your clicked location of interest.')
             .openPopup();
-        mymap.flyTo(ll, 16);
+        mymap.flyTo(ll, 18);
     });
    
     // Declares a function that will utilize the location services of the user's device and pass their location information to the function to add a marker to the map and assign coordinates to the global variable ll
@@ -75,7 +75,7 @@
         ll = [position.coords.latitude, position.coords.longitude];
         location = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
             .openPopup();
-        mymap.flyTo(ll, 16);
+        mymap.flyTo(ll, 18);
     }
     
     // Declares a function that will invoke the location services and pass that data to the drop function
@@ -113,7 +113,7 @@
                 ll = [result.Response.View[0].Result[0].Location.DisplayPosition.Latitude, result.Response.View[0].Result[0].Location.DisplayPosition.Longitude];
                 location = L.marker(ll).addTo(mymap).bindPopup('This is your geocoded location!')
                     .openPopup();
-                mymap.flyTo(ll, 16);
+                mymap.flyTo(ll, 18);
             }
         },
         onError = function (error) {
@@ -196,7 +196,7 @@
             } else {
                 var nearest = leafletKnn(ff).nearest(L.latLng(ll), 1);
                 var nearestGroc = [nearest[0].lat, nearest[0].lon];
-                mymap.flyTo(nearestGroc, 16);
+                mymap.flyTo(nearestGroc, 18);
             }
         }
         
