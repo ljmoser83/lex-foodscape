@@ -15,9 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Leaflet and Leaflet.markercluster CSS-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.Default.css">
     <link rel="stylesheet" href="libs/Leaflet.markercluster/MarkerCluster.css">
     <!-- Custom styles for this template -->
@@ -77,7 +75,7 @@
                     <ul role="tablist">
                         <li><a href="#tutorial" role="tab"><i class="fas fa-info-circle" data-toggle="tooltip" title="Tutorial"></i></a></li>
                         <li><a href="#tools" role="tab"><i class="fas fa-hammer" data-toggle="tooltip" title="Map Tools"></i></a></li>
-                        <li><a href="#legends" role="tab"><i class="fas fa-map-signs" data-toggle="tooltip" title="Legend"></i></a></li>
+                        <li><a href="#legends" role="tab"><i class="fas fa-map-signs  d-lg-none d-xl-none" data-toggle="tooltip" title="Legend"></i></a></li>
                     </ul>
                     <ul role="tablist">
                         <li><a href="#references" role="tab"><i class="fas fa-book" data-toggle="tooltip" title="References"></i></a></li>
@@ -180,6 +178,30 @@
                     </div>
                 </div>
             </div>
+            <div class="d-none d-lg-block bg-white mt-2 border p-2" id="leg">
+                <p class="h3">Legend</p>
+                <div id="legend" class="">
+                    <div>
+                        <p class="h5">Convenience Store<img style="float: right;" src='images/c.png'></p>
+                    </div>
+                    <div>
+                        <div>
+                            <p class="h5">Fast Food Restaurant<img style="float: right;" src='images/f.png'></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p class="h5">Full Service Restaurant<img style="float: right;" src='images/l.png'></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p class="h5">Grocery Store<img style="float: right;" src='images/g.png'>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-12 mx-auto map sidebar-map" id='map'></div>
             </div>
@@ -200,9 +222,8 @@
     </script>
 
     <!--Leaflet and markercluster JS -->
-    <script src="https://unpkg.com/leaflet@1.5.0/dist/leaflet.js"
-  integrity="sha512-3Wcxp7F9bV2pl+MBgrL6Pz7AJASLpemmQPIiPA0lDs3ImF0z4JuuMIBPeirLbgIuhfH2gJyGWZjvm6M+Zr7L6Q=="
-  crossorigin=""></script> <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.0/dist/leaflet.js" integrity="sha512-3Wcxp7F9bV2pl+MBgrL6Pz7AJASLpemmQPIiPA0lDs3ImF0z4JuuMIBPeirLbgIuhfH2gJyGWZjvm6M+Zr7L6Q==" crossorigin=""></script>
+    <script src="libs/Leaflet.markercluster/leaflet.markercluster.js"></script>
 
     <!-- Plugin easing JavaScript -->
     <script src="js/easing.js"></script>
