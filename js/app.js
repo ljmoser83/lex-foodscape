@@ -6,7 +6,8 @@
 
     // Creates a leaflet map within the #map div and assigns to variable mymap
     var mymap = L.map('map', {
-        zoomControl: false
+        zoomControl: false,
+        attributionControl: false
     }).setView([38.03962, -84.496257], 12);
 
     // Adds a tilelayer to the map using mapbox API key for tile access
