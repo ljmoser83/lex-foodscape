@@ -154,7 +154,9 @@
 
         // Creates a cluster group to store layers in that will be used the the markercluster functionality
         var food = L.markerClusterGroup({
-            disableClusteringAtZoom: 14
+            disableClusteringAtZoom: 14,
+            chunkedLoading: true,
+            polygonOptions: { stroke:false, color: 'red' }
         });
 
         // Establishes variables containing the relative paths for icons to be used with each class of food location 
