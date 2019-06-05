@@ -29,7 +29,7 @@
 
 <body id="page-top">
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <div class="container">
@@ -39,7 +39,10 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+                
+                <ul class="navbar-nav nav-pills ml-auto">
+                    
+    
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#about">About</a>
                     </li>
@@ -49,7 +52,9 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#details">Details</a>
                     </li>
-                    <div class='align-center'>
+  
+                        
+                    <div class='ml-2 align-center'>
                         <li>
                             <div class="fb-share-button" data-href="https://ljmoser83.github.io/lex-foodscape/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fljmoser83.github.io%2Flex-foodscape%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
                         </li>
@@ -70,7 +75,7 @@
     <section id="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 mx-auto mt-2 height">
+                <div class="col-lg-12 mx-auto mt-3 height">
                     <p class="h3 text-left">Mission Statement</p>
                     <p class="lead text-left">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the <a href='https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754' target='_blank'>foodscape</a> concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions.
                     </p>
@@ -86,7 +91,7 @@
     <section id="mapp">
         <div class="container position-relative">
 
-            <div id="sidebar" class="sidebar collapsed">
+            <div id="sidebar" class="sidebar collapsed mt-4">
                 <!-- Nav tabs -->
                 <div class="sidebar-tabs">
                     <ul role="tablist">
@@ -222,7 +227,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 mx-auto map sidebar-map" id='map'></div>
+                <div class="col-lg-12 mx-auto mt-4 map sidebar-map" id='map'></div>
             </div>
         </div>
 
@@ -252,6 +257,8 @@
             <div>Map authored by <a href='https://ljmoser83.github.io/'>Lee Moser</a></div>
         </div>
     </footer>
+    <!-- Facebook API for Share Button -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
     <!-- Twitter API for Tweet Button -->
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <!-- JQuery, Popper, and Bootstrap JavaScript -->
