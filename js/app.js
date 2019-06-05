@@ -279,7 +279,7 @@
                                 else if (within[i].layer.feature.properties.RFEI_cat == "L") num += 1;
                                 else den += 1;
                             }
-                            if (den == 0) x.innerHTML = "No fresh food locations in this area of interest!";
+                            if (den == 0) x.innerHTML = num+ " unhealthy/less healthy options and no healthy food locations in this area of interest!";
                             else x.innerHTML = (num / den).toFixed(2) + ":1";
                         } else if (within == '') x.innerHTML = "No food locations in this area of interest!";
                     }
