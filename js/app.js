@@ -152,7 +152,8 @@
 
         // Function that will reset the map without a full site reload
         function reset() {
-            x.innerHTML = '---'
+            x.innerHTML = '---';
+            ll='';
             if (location != undefined) {
                 mymap.removeLayer(location);
             };
@@ -256,6 +257,8 @@
                 // Binds a function to the dist radio input that will add a circle of desired radius to the map and calculate the unhealthy/healthy food choice ratio
                 $("input[name='dist']").click(function () {
                     distance = parseInt(this.value);
+                     if (ll == '') {
+                        alert("Set a location of interest.");}
                     if (ll != undefined) {
                         mymap.removeLayer(circle);
                         circle = L.circle(ll, {
