@@ -44,6 +44,9 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#mapp">Map</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#details">Details</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -78,6 +81,7 @@
                     <ul role="tablist">
                         <li><a href="#tutorial" role="tab"><i class="fas fa-info-circle" data-toggle="tooltip" title="Tutorial"></i></a></li>
                         <li><a href="#tools" role="tab"><i class="fas fa-hammer" data-toggle="tooltip" title="Map Tools"></i></a></li>
+                        <li><button class='btn bg-white' onclick="alert('This button will clear all user interactions and reset the map to initial state');"><a><i class="fas fa-recycle" data-toggle="tooltip" title="Reset"></i></a></button></li>
                         <li><a href="#legends" role="tab"><i class="fas fa-map-signs  d-lg-none d-xl-none" data-toggle="tooltip" title="Legend"></i></a></li>
                     </ul>
                     <ul role="tablist">
@@ -97,10 +101,11 @@
                             <li>Click the "Use Current Location" button</li>
                             <li>Click on a point of interest on the map</li>
                         </ol>
-                        <p class="text-left mt-2">The location of interest will be buffered by the user determined normal mobility radius. This area of interest will represent the user's foodscape.
+                        <p class="text-left mt-2">The location of interest will be buffered by the user determined area of interest. This area of interest will represent the user's foodscape.
                         </p>
-                        <p class="text-left mt-2">An unhealthy/healthy food choice ratio will be calculated for the area of interest. This ratio will indicate the relative exposure of consumers to healthy and unhealthy food choices within the area of interest. An area with high exposure to unhealthy food options is any area with a ratio greater than 4:1.</p>
+                        <p class="text-left mt-2">An unhealthy:healthy food choice ratio will be calculated for the foodscape. This ratio indicates the relative exposure of consumers to unhealthy and healthy food choices in foodscape.</p>
                         <p class="text-left mt-2">The "Locate Nearest Healthy Food Option" button can be used to determine the location of the nearest healthy food option to the location of interest.</p>
+                        <p>Use the "Reset" button to clear all user interactions and reset the map to initial state </p>
                     </div>
                     <div class="sidebar-pane" id="tools">
                         <h1 class="sidebar-header">Map Tools<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
@@ -211,23 +216,25 @@
         </div>
 
     </section>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto mt-2 height">
-                <p class="h4 text-left">What Makes a Food Healthy or Unhealthy?</p>
-                <p class="lead text-left"><span class="font-weight-bold">Healthy food:</span> Foods that (a) are comprised of at least one of the major food groups (vegetables, fruits, grains, dairy, and protein foods) equal to at least half the portion size that the Dietary Guidelines for Americans 2010 uses for measuring the nutrients in that food, and (b) contain only moderate amounts of saturated fats, added sugars, and sodium.
-                </p>
-                <p class="lead text-left"><span class="font-weight-bold">Less healthy/Unhealthy food:</span> Foods that are high in saturated fat, added sugar, and/or sodium, or that contribute little to meeting dietary recommendations. Recent research suggests that highly processed foods should be grouped into this category.
-                </p>
+    <section id='details'>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mx-auto mt-2 height">
+                    <p class="h4 text-left">What Makes a Food Healthy or Unhealthy?</p>
+                    <p class="lead text-left"><span class="font-weight-bold">Healthy food:</span> Foods that (a) are comprised of at least one of the major food groups (vegetables, fruits, grains, dairy, and protein foods) equal to at least half the portion size that the Dietary Guidelines for Americans 2010 uses for measuring the nutrients in that food, and (b) contain only moderate amounts of saturated fats, added sugars, and sodium.
+                    </p>
+                    <p class="lead text-left"><span class="font-weight-bold">Less healthy/Unhealthy food:</span> Foods that are high in saturated fat, added sugar, and/or sodium, or that contribute little to meeting dietary recommendations. Recent research suggests that highly processed foods should be grouped into this category.
+                    </p>
 
-                <p class="h4 text-left">What Types of Locations Makeup the Lexington Foodscape?</p>
-                <p class="lead text-left"><span class="font-weight-bold">Convenience Stores:</span> Primarily engaged in retailing a limited line of goods that include soda, snack foods, etc. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
-                <p class="lead text-left"><span class="font-weight-bold">Fast Food Restaurants:</span> Primarily engaged in providing food services where patrons generally order or select items and pay before eating. Food and drink may be consumed on premises, taken out, or delivered to the customer’s location. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
-                <p class="lead text-left"><span class="font-weight-bold">Full Service Restaurants:</span> Primarily engaged in providing food services where patrons generally order or select items and pay after eating. Food and drink are typically consumed on premises. Some of these restaurants offer take-out options. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
-                <p class="lead text-left"><span class="font-weight-bold">Grocery Stores:</span> Primarily engaged in retailing a general line of food, such as canned and frozen foods; fresh fruits and vegetables; and fresh and prepared meats, fish, and poultry. <span class='font-italic'>(Considered Healthy, Although They Offer Many Less Healthy/Unhealthy Options)</span></p>
+                    <p class="h4 text-left">What Types of Locations Makeup the Lexington Foodscape?</p>
+                    <p class="lead text-left"><span class="font-weight-bold">Convenience Stores:</span> Primarily engaged in retailing a limited line of goods that include soda, snack foods, etc. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
+                    <p class="lead text-left"><span class="font-weight-bold">Fast Food Restaurants:</span> Primarily engaged in providing food services where patrons generally order or select items and pay before eating. Food and drink may be consumed on premises, taken out, or delivered to the customer’s location. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
+                    <p class="lead text-left"><span class="font-weight-bold">Full Service Restaurants:</span> Primarily engaged in providing food services where patrons generally order or select items and pay after eating. Food and drink are typically consumed on premises. Some of these restaurants offer take-out options. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
+                    <p class="lead text-left"><span class="font-weight-bold">Grocery Stores:</span> Primarily engaged in retailing a general line of food, such as canned and frozen foods; fresh fruits and vegetables; and fresh and prepared meats, fish, and poultry. <span class='font-italic'>(Considered Healthy, Although They Offer Many Less Healthy/Unhealthy Options)</span></p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     <footer class="py-5 bg-dark">
         <div class="container text-white text-center">
             <div>Explore the raw <a href='https://github.com/ljmoser83/lex-foodscape/tree/master/data'>data</a></div>
