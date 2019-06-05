@@ -7,7 +7,8 @@
     // Creates a leaflet map within the #map div and assigns to variable mymap
     var mymap = L.map('map', {
         zoomControl: false,
-        attributionControl: false
+        attributionControl: false,
+        minZoom: 10
     }).setView([38.03962, -84.496257], 12);
 
     // Adds a tilelayer to the map using mapbox API key for tile access
@@ -156,7 +157,10 @@
         var food = L.markerClusterGroup({
             disableClusteringAtZoom: 14,
             chunkedLoading: true,
-            polygonOptions: { stroke:false, color: 'red' }
+            polygonOptions: {
+                stroke: false,
+                color: 'red'
+            }
         });
 
         // Establishes variables containing the relative paths for icons to be used with each class of food location 
@@ -202,7 +206,9 @@
                 icon: color(feature)
             });
             // bind a tooltip to the marker
-            marker.bindTooltip("Name: " + feature.properties.Name);
+            marker.bindTooltip("Name: " + feature.properties.Name, {
+                offset: [13, 10]
+            });
             // add the marker to the markerClusterGroup
             food.addLayer(marker);
         });

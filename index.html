@@ -56,24 +56,14 @@
     <section id="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 mx-auto height">
-                    <p class="h3 text-center">Mission Statement</p>
-                    <p class="lead text-justify">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the <a href='https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754' target='_blank'>foodscape</a> concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions.
+                <div class="col-lg-12 mx-auto mt-2 height">
+                    <p class="h3 text-left">Mission Statement</p>
+                    <p class="lead text-left">The goal of the Lexington, KY Foodscape Mapping Project is to design an interactive web map that explores the <a href='https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754' target='_blank'>foodscape</a> concept and investigates the prevalence and location of various types of food options in Lexington, Kentucky. This project will visualize the food choices that we are faced with in our daily lives. These choices and exposures play a large role in determining how we consume food and the overall health impact of our consumption decisions.
                     </p>
-                    <p class="lead text-justify">Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment and a healthy diet. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).
+                    <p class="lead text-left">Map users will gain a better understanding of the Lexington, KY foodscape. Gaining this understanding will raise awareness of the daily choices we face in obtaining nourishment and a healthy diet. An underlying theme of this project is a focus on improving food system equity (equal access and exposure to healthy food choices across demographic and socioeconomic groups).
 
                     </p>
-                    <p class="h4 text-center">What Makes a Food Healthy or Unhealthy?</p>
-                    <p class="lead text-justify"><span class="font-weight-bold">Healthy food:</span> Foods that (a) are comprised of at least one of the major food groups (vegetables, fruits, grains, dairy, and protein foods) equal to at least half the portion size that the Dietary Guidelines for Americans 2010 uses for measuring the nutrients in that food, and (b) contain only moderate amounts of saturated fats, added sugars, and sodium.
-                    </p>
-                    <p class="lead text-justify"><span class="font-weight-bold">Less healthy/Unhealthy food:</span> Foods that are high in saturated fat, added sugar, and/or sodium, or that contribute little to meeting dietary recommendations. Recent research suggests that highly processed foods should be grouped into this category.
-                    </p>
 
-                    <p class="h4 text-center">What Types of Locations Makeup the Lexington Foodscape?</p>
-                    <p class="lead text-justify"><span class="font-weight-bold">Convenience Stores:</span> Primarily engaged in retailing a limited line of goods that include soda, snack foods, etc. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
-                    <p class="lead text-justify"><span class="font-weight-bold">Fast Food Restaurants:</span> Primarily engaged in providing food services where patrons generally order or select items and pay before eating. Food and drink may be consumed on premises, taken out, or delivered to the customer’s location. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
-                    <p class="lead text-justify"><span class="font-weight-bold">Full Service Restaurants:</span> Primarily engaged in providing food services where patrons generally order or select items and pay after eating. Food and drink are typically consumed on premises. Some of these restaurants offer take-out options. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
-                    <p class="lead text-justify"><span class="font-weight-bold">Grocery Stores:</span> Primarily engaged in retailing a general line of food, such as canned and frozen foods; fresh fruits and vegetables; and fresh and prepared meats, fish, and poultry. <span class='font-italic'>(Considered Healthy, Although They Offer Many Less Healthy/Unhealthy Options)</span></p>
                 </div>
             </div>
         </div>
@@ -101,16 +91,16 @@
                             Tutorial
                             <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                         </h1>
-                        <p class="text-justify mt-2">Enter the "Map Tools" tab and add a location of interest by one of three methods:</p>
+                        <p class="text-left mt-2">Enter the "Map Tools" tab and add a location of interest by one of three methods:</p>
                         <ol>
                             <li>Enter an address to be geocoded</li>
                             <li>Click the "Use Current Location" button</li>
                             <li>Click on a point of interest on the map</li>
                         </ol>
-                        <p class="text-justify mt-2">The location of interest will be buffered by the user determined normal mobility radius. This area of interest will represent the user's foodscape.
+                        <p class="text-left mt-2">The location of interest will be buffered by the user determined normal mobility radius. This area of interest will represent the user's foodscape.
                         </p>
-                        <p class="text-justify mt-2">An unhealthy/healthy food choice ratio will be calculated for the area of interest. This ratio will indicate the relative exposure of consumers to healthy and unhealthy food choices within the area of interest. An area with high exposure to unhealthy food options is any area with a ratio greater than 4:1.</p>
-                        <p class="text-justify mt-2">The "Locate Nearest Healthy Food Option" button can be used to determine the location of the nearest healthy food option to the location of interest.</p>
+                        <p class="text-left mt-2">An unhealthy/healthy food choice ratio will be calculated for the area of interest. This ratio will indicate the relative exposure of consumers to healthy and unhealthy food choices within the area of interest. An area with high exposure to unhealthy food options is any area with a ratio greater than 4:1.</p>
+                        <p class="text-left mt-2">The "Locate Nearest Healthy Food Option" button can be used to determine the location of the nearest healthy food option to the location of interest.</p>
                     </div>
                     <div class="sidebar-pane" id="tools">
                         <h1 class="sidebar-header">Map Tools<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
@@ -143,7 +133,7 @@
                             </div>
                         </div>
                         <div id='ratio' class="border mt-2">
-                            <p style="text-align: center;" class="lead">Unhealthy/Healthy <br> Food Choice Ratio
+                            <p style="text-align: center;" class="lead">Unhealthy:Healthy <br> Food Choice Ratio
                             </p>
                             <div class="ratio">
                                 <p style="font-weight:bold; text-align: center;" id='fcr'>---</p>
@@ -154,24 +144,24 @@
                         </button>
                     </div>
                     <div class="sidebar-pane" id="legends">
-                        <h1 class="sidebar-header">Legend<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                        <h1 class="h4">Legend<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
                         <div id="legend" class="mt-2 border p-2">
                             <div>
-                                <p class="lead">Convenience Store<img style="float: right;" src='images/c.png'></p>
+                                <p class="h6">Convenience Store<img style="float: right;" src='images/c.png'></p>
                             </div>
                             <div>
                                 <div>
-                                    <p class="lead">Fast Food Restaurant<img style="float: right;" src='images/f.png'></p>
+                                    <p class="h6">Fast Food Restaurant<img style="float: right;" src='images/f.png'></p>
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <p class="lead">Full Service Restaurant<img style="float: right;" src='images/l.png'></p>
+                                    <p class="h6">Full Service Restaurant<img style="float: right;" src='images/l.png'></p>
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <p class="lead">Grocery Store<img style="float: right;" src='images/g.png'>
+                                    <p class="h6">Grocery Store<img style="float: right;" src='images/g.png'>
                                     </p>
                                 </div>
                             </div>
@@ -184,32 +174,32 @@
                             <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                         </h1>
                         <ul class="mt-2">
-                            <li class="mt-2">Cooksey-Stowers, K., Schwarts, M.B., Brownell, K.D. <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5708005/pdf/ijerph-14-01366.pdf' target='_blank'>Food Swamps Predict Obesity Rates Better than Food Deserts in the United States.</a> International Journal of Environmental Reesearch and Public Health. 2017.</li>
-                            <li class="mt-2"> Mackendrick, Norah. (2014). <a href='https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754' target='_blank'>Jargon: Foodscape.</a> Contexts. 13. 16-18.</li>
-                            <li class="text-justify mt-2">Rose, D., Bodor, N., Swalm, C., Rice, J., Fraley, T., Hutchinson, P. <a href='https://pdfs.semanticscholar.org/abc8/b418aa0783c8f3b0a0c4fca8f137ad806e0a.pdf' target='_blank'>Deserts in New Orleans? Illustrations of Urban Food Access and Implications for Policy.</a> University of Michigan National Poverty Center. USDA Economic Research Service Research: Ann Arbor, MI, USA. 2009. </li>
+                            <li class="text-left mt-2">Cooksey-Stowers, K., Schwarts, M.B., Brownell, K.D. <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5708005/pdf/ijerph-14-01366.pdf' target='_blank'>Food Swamps Predict Obesity Rates Better than Food Deserts in the United States.</a> International Journal of Environmental Reesearch and Public Health. 2017.</li>
+                            <li class="text-left mt-2"> Mackendrick, Norah. (2014). <a href='https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754' target='_blank'>Jargon: Foodscape.</a> Contexts. 13. 16-18.</li>
+                            <li class="text-left mt-2">Rose, D., Bodor, N., Swalm, C., Rice, J., Fraley, T., Hutchinson, P. <a href='https://pdfs.semanticscholar.org/abc8/b418aa0783c8f3b0a0c4fca8f137ad806e0a.pdf' target='_blank'>Deserts in New Orleans? Illustrations of Urban Food Access and Implications for Policy.</a> University of Michigan National Poverty Center. USDA Economic Research Service Research: Ann Arbor, MI, USA. 2009. </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="d-none d-lg-block bg-white mt-2 border p-2" id="leg">
-                <p class="h3">Legend</p>
+                <p class="h4">Legend</p>
                 <div id="legend" class="">
                     <div>
-                        <p class="h5">Convenience Store<img style="float: right;" src='images/c.png'></p>
+                        <p class="h6">Convenience Store<img style="float: right;" src='images/c.png'></p>
                     </div>
                     <div>
                         <div>
-                            <p class="h5">Fast Food Restaurant<img style="float: right;" src='images/f.png'></p>
+                            <p class="h6">Fast Food Restaurant<img style="float: right;" src='images/f.png'></p>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <p class="h5">Full Service Restaurant<img style="float: right;" src='images/l.png'></p>
+                            <p class="h6">Full Service Restaurant<img style="float: right;" src='images/l.png'></p>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <p class="h5">Grocery Store<img style="float: right;" src='images/g.png'>
+                            <p class="h6">Grocery Store<img style="float: right;" src='images/g.png'>
                             </p>
                         </div>
                     </div>
@@ -219,7 +209,25 @@
                 <div class="col-lg-12 mx-auto map sidebar-map" id='map'></div>
             </div>
         </div>
+
     </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto mt-2 height">
+                <p class="h4 text-left">What Makes a Food Healthy or Unhealthy?</p>
+                <p class="lead text-left"><span class="font-weight-bold">Healthy food:</span> Foods that (a) are comprised of at least one of the major food groups (vegetables, fruits, grains, dairy, and protein foods) equal to at least half the portion size that the Dietary Guidelines for Americans 2010 uses for measuring the nutrients in that food, and (b) contain only moderate amounts of saturated fats, added sugars, and sodium.
+                </p>
+                <p class="lead text-left"><span class="font-weight-bold">Less healthy/Unhealthy food:</span> Foods that are high in saturated fat, added sugar, and/or sodium, or that contribute little to meeting dietary recommendations. Recent research suggests that highly processed foods should be grouped into this category.
+                </p>
+
+                <p class="h4 text-left">What Types of Locations Makeup the Lexington Foodscape?</p>
+                <p class="lead text-left"><span class="font-weight-bold">Convenience Stores:</span> Primarily engaged in retailing a limited line of goods that include soda, snack foods, etc. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
+                <p class="lead text-left"><span class="font-weight-bold">Fast Food Restaurants:</span> Primarily engaged in providing food services where patrons generally order or select items and pay before eating. Food and drink may be consumed on premises, taken out, or delivered to the customer’s location. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
+                <p class="lead text-left"><span class="font-weight-bold">Full Service Restaurants:</span> Primarily engaged in providing food services where patrons generally order or select items and pay after eating. Food and drink are typically consumed on premises. Some of these restaurants offer take-out options. <span class='font-italic'>(Considered Less Healthy/Unhealthy)</span></p>
+                <p class="lead text-left"><span class="font-weight-bold">Grocery Stores:</span> Primarily engaged in retailing a general line of food, such as canned and frozen foods; fresh fruits and vegetables; and fresh and prepared meats, fish, and poultry. <span class='font-italic'>(Considered Healthy, Although They Offer Many Less Healthy/Unhealthy Options)</span></p>
+            </div>
+        </div>
+    </div>
     <footer class="py-5 bg-dark">
         <div class="container text-white text-center">
             <div>Explore the raw <a href='https://github.com/ljmoser83/lex-foodscape/tree/master/data'>data</a></div>
