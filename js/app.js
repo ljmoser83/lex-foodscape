@@ -149,6 +149,9 @@
 
     // Binds event listener to the #button div
     $("#button").on("click", button);
+    
+    //Binds an event listener no the #reset button
+    $("#reset").on("click", function() {alert('This button will clear all user interactions and reset the map to initial state');});
 
     // AJAX request to retrieve the lf.json file containing hte LExington, KY food locations
     $.when($.getJSON('data/Lex_Food/lf.json')).done(function (lf) {
