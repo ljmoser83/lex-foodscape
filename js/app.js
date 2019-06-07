@@ -75,6 +75,7 @@
         if (ll != undefined) {
             mymap.removeLayer(circle);
         };
+        mymap.removeLayer(highlight);
         mymap.setView([lat, lon], 15);
         //Add a marker to show where you clicked.
         location = L.marker([lat, lon]).addTo(mymap).bindPopup('This is your clicked location of interest.')
@@ -92,6 +93,7 @@
         if (ll != undefined) {
             mymap.removeLayer(circle);
         };
+        mymap.removeLayer(highlight);
         ll = [position.coords.latitude, position.coords.longitude];
         location = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup('This is your approximate current location.')
             .openPopup();
@@ -127,6 +129,7 @@
             if (ll != undefined) {
                 mymap.removeLayer(circle);
             };
+            mymap.removeLayer(highlight);
             if (text == '') {
                 alert("Enter an address to be geocoded.");
             } else {
@@ -166,19 +169,6 @@
             }
         });
 
-        // Establishes variables containing the relative paths for icons to be used with each class of food location 
-        var cIcon = L.icon({
-            iconUrl: 'images/C2.png'
-        });
-        var fIcon = L.icon({
-            iconUrl: 'images/F2.png'
-        });
-        var gIcon = L.icon({
-            iconUrl: 'images/G2.png'
-        });
-        var lIcon = L.icon({
-            iconUrl: 'images/L2.png'
-        });
 
         // Function definition to assign the icon color based on the food location classification
         function color(feature) {
@@ -218,22 +208,6 @@
             food.addLayer(marker);
         });
 
-        //                for (var i = 0; i < food._featureGroup._layers.length; i++)
-        //                // loop through all our features
-        //                lf.features.forEach(function (feature) {
-        //                    // create a new Leaflet marker for each
-        //                    var coords = feature.geometry.coordinates;
-        //                    cat = feature.properties.RFEI_cat;
-        //                    marker = L.marker([coords[1], coords[0]], {
-        //                        icon: color(feature)
-        //                    });
-        //                    // bind a tooltip to the marker
-        //                    marker.bindTooltip("Name: " + feature.properties.Name, {
-        //                        offset: [13, 10]
-        //                    });
-        //                    // add the marker to the markerClusterGroup
-        //                    food.addLayer(marker);
-        //                });
 
         // add the markerClusterGroup to the map
         mymap.addLayer(food);
