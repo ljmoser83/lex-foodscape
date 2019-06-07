@@ -168,25 +168,25 @@
 
         // Establishes variables containing the relative paths for icons to be used with each class of food location 
         var cIcon = L.icon({
-            iconUrl: 'images/c.png'
+            iconUrl: 'images/C2.png'
         });
         var fIcon = L.icon({
-            iconUrl: 'images/f.png'
+            iconUrl: 'images/F2.png'
         });
         var gIcon = L.icon({
-            iconUrl: 'images/g.png'
+            iconUrl: 'images/G2.png'
         });
         var lIcon = L.icon({
-            iconUrl: 'images/l.png'
+            iconUrl: 'images/L2.png'
         });
 
         // Function definition to assign the icon color based on the food location classification
         function color(feature) {
             var icon;
-            if (feature.properties.RFEI_cat == "C") icon = '#b2df8a';
-            else if (feature.properties.RFEI_cat == "F") icon = '#1f78b4';
-            else if (feature.properties.RFEI_cat == "L") icon = '#a6cee3';
-            else icon = '#33a02c';
+            if (feature.properties.RFEI_cat == "C") icon = '#7570b3';
+            else if (feature.properties.RFEI_cat == "F") icon = '#d95f02';
+            else if (feature.properties.RFEI_cat == "L") icon = '#e7298a';
+            else icon = '#1b9e77';
             return icon;
         }
 
