@@ -18,12 +18,13 @@ A mobile-first, responsive website was built around an interactive web map conta
 Original Conceptions:
 
 Mobile:
-![Mobile Deign Sketch](https://github.com/ljmoser83/lex-foodscape/blob/master/images/mobile.png)
+![Mobile Design Sketch](https://github.com/ljmoser83/lex-foodscape/blob/master/images/mobile.png)
 
 Desktop:
 ![Desktop Design Sketch](https://github.com/ljmoser83/lex-foodscape/blob/master/images/lex-foodscape-concept.png)
 
 Final Design:
+![Final Design](https://github.com/ljmoser83/lex-foodscape/blob/master/images/layout.png)
 [lex-foodscape](https://ljmoser83.github.io/lex-foodscape/)
 
 ### D. Thematic representation
