@@ -23,6 +23,9 @@ Mobile:
 Desktop:
 ![Desktop Design Sketch](https://github.com/ljmoser83/lex-foodscape/blob/master/images/lex-foodscape-concept.png)
 
+Final Design:
+[lex-foodscape](https://ljmoser83.github.io/lex-foodscape/)
+
 ### D. Thematic representation
 
 The "RFEI_cat" field is used for visualization and symbology during website user interaction. It is also be utilized to quantify the exposure to healthy/unhealthy food choices in the selected foodscape area (as determined by the selected radio value) based on methods set forth in [Cooksey-Stowers, et al., 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5708005/pdf/ijerph-14-01366.pdf). 
