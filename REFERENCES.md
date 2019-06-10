@@ -8,11 +8,15 @@
 
 * Cooksey-Stowers, K., Schwarts, M.B., Brownell, K.D. Food Swamps Predict Obesity Rates Better than Food Deserts in the United States. International Journal of Environmental Research and Public Health. 2017. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5708005/pdf/ijerph-14-01366.pdf 
 
-* Hager, E.R., Cockerham, A., O'Reilly, N., Harrington, D., Harding, J., Hurley, K.M., Black, M. Food Swamps and Food Deserts in Baltimore City, MD, USA: Associations with Dietary Behaviors Among Urban Adolescent Girls. Public Health Nutr. 20(14): 2598–2607. October 2017. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5572508/pdf/nihms883405.pdf
+* Hager, E.R., Cockerham, A., O'Reilly, N., Harrington, D., Harding, J., Hurley, K.M., Black, M. Food Swamps and Food Deserts in Baltimore City, MD, USA: Associations with Dietary Behaviours Among Urban Adolescent Girls. Public Health Nutr. 20(14): 2598–2607. October 2017. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5572508/pdf/nihms883405.pdf
 
 * Mackendrick, Norah. (2014). Jargon: Foodscape. Contexts. 13. 16-18. 10.1177/1536504214545754. https://journals.sagepub.com/doi/pdf/10.1177/1536504214545754 
 
 * Rose, D., Bodor, N., Swalm, C., Rice, J., Fraley, T., Hutchinson, P. Deserts in New Orleans? Illustrations of Urban Food Access and Implications for Policy. University of Michigan National Poverty Center. USDA Economic Research Service Research: Ann Arbor, MI, USA. 2009. https://pdfs.semanticscholar.org/abc8/b418aa0783c8f3b0a0c4fca8f137ad806e0a.pdf
+
+* U.S. Department of Health and Human Services and U.S. Department of Agriculture. 2015–2020 Dietary Guidelines for Americans. 8th Edition. December 2015. http://health.gov/dietaryguidelines/2015/guidelines/
+
+* U.S. Office of Management and Budget. North American Industry Classification System. 2017. https://www.census.gov/eos/www/naics/
 
 ## Notes
 
