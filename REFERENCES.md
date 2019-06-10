@@ -6,6 +6,8 @@
 
 ## Literature Review
 
+* Carlson, Andrea, and Elizabeth Frazão. Are Healthy Foods Really More Expensive? It depends on How You Measure the Price. EIB-96, U.S. Department of Agriculture, Economic Research Service, May 2012. https://www.ers.usda.gov/webdocs/publications/44678/19980_eib96.pdf?v=42321 
+
 * Cooksey-Stowers, K., Schwarts, M.B., Brownell, K.D. Food Swamps Predict Obesity Rates Better than Food Deserts in the United States. International Journal of Environmental Research and Public Health. 2017. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5708005/pdf/ijerph-14-01366.pdf 
 
 * Hager, E.R., Cockerham, A., O'Reilly, N., Harrington, D., Harding, J., Hurley, K.M., Black, M. Food Swamps and Food Deserts in Baltimore City, MD, USA: Associations with Dietary Behaviours Among Urban Adolescent Girls. Public Health Nutr. 20(14): 2598–2607. October 2017. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5572508/pdf/nihms883405.pdf
