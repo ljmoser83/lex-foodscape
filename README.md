@@ -29,6 +29,8 @@ Final Design:
 
 ![Final Design](https://github.com/ljmoser83/lex-foodscape/blob/master/images/layout.png)
 
+Link to Live Web Page:
+
 [lex-foodscape](https://ljmoser83.github.io/lex-foodscape/)
 
 ### D. Thematic representation
