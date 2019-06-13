@@ -1,5 +1,5 @@
 (function () {
-    // JQuery call to display tooltips within the body container
+
     $('[data-toggle="tooltip"]').tooltip({
         container: 'body'
     });
