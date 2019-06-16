@@ -61,7 +61,7 @@
     var highlight = {};
 
     // Adds a click event listener to mymap that will add a marker to the map and assign the coordinates of the click event to the global variable ll
-    mymap.on('click', function (e) {
+    mymap.on('dblclick', function (e) {
         x.innerHTML = '---'
         lat = e.latlng.lat;
         lon = e.latlng.lng;
