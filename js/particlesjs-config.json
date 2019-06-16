@@ -46,7 +46,7 @@
       }
     },
     "line_linked": {
-      "enable": false,
+      "enable": true,
       "distance": 150,
       "color": "#ffffff",
       "opacity": 0.4,
@@ -89,7 +89,7 @@
       },
       "bubble": {
         "distance": 231.44200550588337,
-        "size": 10,
+        "size": 5,
         "duration": 2,
         "opacity": 8,
         "speed": 3
